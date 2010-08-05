@@ -1,7 +1,13 @@
 Changelog
 =========
 
-trunk (unreleased)
--------------------
+trunk (2010-08-05)
+------------------
+
+* xxx [Simples Consultoria]
+
+
+20100805.01 (2010-08-05)
+------------------------
 
 - Initial release [erico_andrei]
