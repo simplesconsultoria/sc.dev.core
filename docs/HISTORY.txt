@@ -1,0 +1,7 @@
+Changelog
+=========
+
+trunk (unreleased)
+-------------------
+
+- Initial release [erico_andrei]
