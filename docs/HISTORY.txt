@@ -1,8 +1,14 @@
 Changelog
 =========
 
-trunk (2010-08-05)
+trunk (2010-08-09)
 ------------------
+
+* xxx [Simples Consultoria]
+
+
+20100809.01 (2010-08-09)
+------------------------
 
 * Bump sc.paster.theme version [erico_andrei]
 
