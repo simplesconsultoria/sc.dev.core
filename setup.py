@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '20100805.02'
+version = '20100809.01'
 
 setup(name='sc.dev.core',
       version=version,
@@ -27,7 +27,7 @@ setup(name='sc.dev.core',
           'sc.paster.package==0.5.1',
           'sc.paster.buildout==0.5.1',
           'sc.paster.policy==0.6.1',
-          'sc.paster.theme==0.6.2',
+          'sc.paster.theme==0.6.3',
       ],
       entry_points="""
       # -*- Entry points: -*-

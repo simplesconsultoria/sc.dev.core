@@ -4,13 +4,13 @@ Changelog
 trunk (2010-08-05)
 ------------------
 
-* xxx [Simples Consultoria]
+* Bump sc.paster.theme version [erico_andrei]
 
 
 20100805.02 (2010-08-05)
 ------------------------
 
-* xxx [Simples Consultoria]
+* Fixes unicode error [erico_andrei]
 
 
 20100805.01 (2010-08-05)
