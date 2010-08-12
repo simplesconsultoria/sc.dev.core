@@ -28,6 +28,8 @@ setup(name='sc.dev.core',
           'sc.paster.buildout==0.5.1',
           'sc.paster.policy==0.6.1',
           'sc.paster.theme==0.6.3',
+          'zest.releaser==3.12',
+          'collective.dist==0.2.5'
       ],
       entry_points="""
       # -*- Entry points: -*-
