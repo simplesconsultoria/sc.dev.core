@@ -28,6 +28,7 @@ setup(name='sc.dev.core',
           'sc.paster.buildout==0.5.2',
           'sc.paster.policy==0.6.1',
           'sc.paster.theme==0.6.4',
+          'setuptools-git==0.3.4',
           'collective.dist==0.2.5',
           'zest.releaser==3.12',
           'collective.dist==0.2.5'
