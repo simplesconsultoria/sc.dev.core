@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '20100809.01'
+version = '20100818.01'
 
 setup(name='sc.dev.core',
       version=version,

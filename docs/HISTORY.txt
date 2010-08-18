@@ -4,7 +4,11 @@ Changelog
 trunk (2010-08-09)
 ------------------
 
-* xxx [Simples Consultoria]
+* Bump dependecies versions [erico_andrei]
+
+* Add dependencies to collective.dist and setuptools-git [erico_andrei]
+
+* Add dependencies to zest.releaser and collective.dist [erico_andrei]
 
 
 20100809.01 (2010-08-09)
