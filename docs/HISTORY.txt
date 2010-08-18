@@ -1,8 +1,14 @@
 Changelog
 =========
 
-trunk (2010-08-09)
+trunk (2010-08-18)
 ------------------
+
+* xxx [Simples Consultoria]
+
+
+20100818.01 (2010-08-18)
+------------------------
 
 * Bump dependecies versions [erico_andrei]
 
