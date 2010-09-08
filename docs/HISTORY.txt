@@ -1,10 +1,10 @@
 Changelog
 =========
 
-trunk (2010-08-18)
-------------------
+20100908.01 (2010-09-08)
+------------------------
 
-* xxx [Simples Consultoria]
+* New versions, support for zest.releaser improved [erico_andrei]
 
 
 20100818.01 (2010-08-18)

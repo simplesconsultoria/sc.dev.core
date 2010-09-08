@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '20100818.01'
+version = '20100908.01'
 
 setup(name='sc.dev.core',
       version=version,
@@ -24,10 +24,10 @@ setup(name='sc.dev.core',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'sc.paster.package==0.5.2',
-          'sc.paster.buildout==0.5.2',
-          'sc.paster.policy==0.6.1',
-          'sc.paster.theme==0.6.4',
+          'sc.paster.package==0.5.3',
+          'sc.paster.buildout==0.5.3',
+          'sc.paster.policy==0.6.2',
+          'sc.paster.theme==0.6.5.1',
           'setuptools-git==0.3.4',
           'collective.dist==0.2.5',
           'zest.releaser==3.12',
