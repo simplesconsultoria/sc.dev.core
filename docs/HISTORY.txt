@@ -1,7 +1,7 @@
 Changelog
 =========
 
-20100908.01 (2010-09-08)
+20100908.02 (2010-09-08)
 ------------------------
 
 * New versions, support for zest.releaser improved [erico_andrei]

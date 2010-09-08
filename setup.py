@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '20100908.01'
+version = '20100908.02'
 
 setup(name='sc.dev.core',
       version=version,
@@ -15,7 +15,7 @@ setup(name='sc.dev.core',
       keywords='',
       author='Simples Consultoria',
       author_email='products@simplesconsultoria.com.br',
-      url='',
+      url='http://www.simplesconsultoria.com.br',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['sc', 'sc.dev'],
