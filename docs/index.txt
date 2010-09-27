@@ -1,0 +1,16 @@
+###################################################
+Padrões de desenvolvimento da Simples Consultoria
+###################################################
+
+Conteúdo:
+
+.. toctree::
+   :maxdepth: 2
+
+   introducao
+   ambiente
+   configuracoes
+   pacotes
+   releases
+   boaspraticas
+   

@@ -1,0 +1,164 @@
+*********************
+Ambiente de trabalho
+*********************
+
+Preparação do ambiente
+======================
+
+Simples Consultoria
+
+Sistema operacional
+-------------------
+
+Windows
+*******
+
+* Garanta ter direitos de administrador sobre a máquina
+
+* Instale um editor de texto de sua preferência -- Ex: Notepad ++
+
+* Instale ferramentas de desenvolvimento para Windows
+
+Ferramentas de desenvolvimento
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Mingw
+
+* Subversion
+
+* Python 2.4
+
+
+MacOS
+*****
+
+* Editor de textos: vim, emacs, TextMate
+
+* XCode: Necessário para compilar extensões C do Zope e de alguns pacotes 
+  Python. (http://developer.apple.com/TOOLS/Xcode/)
+
+* Suporte GNU: Rudix, Darwin Ports
+
+Linux (Ubuntu / Debian)
+****************************
+
+* Editor de textos: vim, emacs, Gedit
+
+Instalação de pacotes
+^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+    apt-get install build-essential subversion python python-dev python-setuptools libjpeg62-dev libzzip-dev zlib1g-dev lynx
+
+Python
+------
+
+Como regra geral é recomendada a instalação de interpretador Python independente 
+do usado pelo sistema operacional. 
+
+A prática usada pela comunidade Plone é a compilação de interpretadores a partir 
+de um buildout disponível no repositório Collective. Este buildout permite que 
+vários interpretadores sejam criados e configurados conforme a necessidade do 
+desenvolvedor.
+
+O primeiro passo é baixar este buildout, na raiz da pasta do usuário, 
+diretamente do svn.plone.org:
+::
+    
+    cd ~/
+    svn co https://svn.plone.org/svn/collective/buildout/python python
+
+Para adequarmos o buildout as nossas necessidades editaremos o arquivo 
+**buildout.cfg** existente na raiz da posta python e comentaremos as versões 
+que não serão necessárias
+::
+
+    [buildout]
+    extends =
+        src/base.cfg
+        src/readline.cfg
+        src/libjpeg.cfg
+        src/python24.cfg
+    #   src/python25.cfg
+        src/python26.cfg
+        src/links.cfg
+
+.. note:: Neste caso apenas a versão 2.5 não será utilizada.
+
+Usando o Python instalado no sistema -- última vez que o usaremos :-) -- 
+executamos o buildout para compilar os interpretadores.
+::
+
+    python bootstrap.py
+    ./bin/buildout
+
+Após um longo tempo -- ao menos no meu 8086 é um longo tempo -- você deve ter 
+alguns scripts disponíveis na pasta *~/python/bin/*
+
+* buildout
+
+* virtualenv-2.4
+
+* virtualenv-2.5
+
+* virtualenv-2.6
+
+Usaremos os scripts de virtualenv para a criação de ambientes Python apartados 
+do intepretador do sistema.
+
+.. note:: O uso do virtualenv é extremamente recomendado para evitar problemas 
+          de conflitos de versão ou dependências entre pacotes Python usados por 
+          diferentes aplicações
+
+sc.dev.core
+---------------
+
+Finalidade
+**********
+
+O pacote **sc.dev.core** é um agregador de outros pacotes Python utilizados para 
+o desenvolvimento de soluções Plone pela Simples Consultoria.
+
+Componentes
+************
+
+* sc.paster.package (0.5.3)
+* sc.paster.buildout (0.5.3)
+* sc.paster.policy (0.6.2)
+* sc.paster.theme (0.6.5.1)
+* setuptools-git (0.3.4)
+* collective.dist (0.2.5)
+* zest.releaser (3.12)
+* collective.dist (0.2.5)
+
+Preparando a instalação
+***********************
+
+Usualmente o primeiro passo para a instalação do sc.dev.core é a criação de um 
+virtualenv próprio.
+
+Um bom local seria uma pasta *simples/dev* também na raiz da pasta do usuário.
+::
+
+    mkdir -p ~/simples/
+    ~/python/bin/virtualenv-2.4 --no-site-packages dev
+
+.. note:: A opção --no-site-packages evita que usemos algum pacote existente no 
+          site-packages do python original do virtualenv
+          
+O passo seguinte é ativar este virtualenv.
+::
+    source ~/simples/dev/bin/activate
+
+
+Instalando o pacote
+***********************
+
+A instalação do **sc.dev.core** é feita com o *easy_install* do virtualenv que 
+acabamos de ativar.
+::
+
+    easy_install -U sc.dev.core
+
+.. note:: A opção -U garante que mesmo que já tenhamos este pacote instalado 
+          procuraremos por uma nova versão e a instalaremos.

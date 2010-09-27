@@ -1,0 +1,232 @@
+*************************
+Trabalhando com pacotes
+*************************
+
+Modelos de pacotes
+====================
+
+Como maneira de agilizar o trabalho de criação de novos pacotes Python a 
+comunidade desenvolveu ferramentas de templates (skeletons). A mais famosa delas
+é o `PasteScript <http://pypi.python.org/pypi/PasteScript/>`_
+
+ZopeSkel
+--------
+
+A partir desta ferramenta a comunidade Zope/Plone criou o projeto `ZopeSkel <http://pypi.python.org/pypi/ZopeSkel/>`_ que contempla alguns modelos de 
+criação de pacotes
+
++-----------------------------------------------------------------------------+
+| Desenvolvimento Plone                                                       |
++===================+=========================================================+
+|  archetype        | Projeto Plone para criação de conteúdos com Archetypes  |
++-------------------+---------------------------------------------------------+
+|  kss_plugin       | Projeto para plugin KSS                                 |
++-------------------+---------------------------------------------------------+
+|  plone            | Projeto para produtos Plone                             |
++-------------------+---------------------------------------------------------+
+|  plone3_portlet   | Portlet para Plone 3                                    |
++-------------------+---------------------------------------------------------+
+|  plone_app        | Projeto Plone com namespace duplo (dois pontos no nome) |
++-------------------+---------------------------------------------------------+
+|  plone_pas        | Projeto para plugin Plone PAS                           |
++-------------------+---------------------------------------------------------+
+
++-----------------------------------------------------------------------------+
+| Desenvolvimento de Temas Plone                                              |
++===================+=========================================================+
+|  plone2_theme     | Tema para Plone 2.1                                     |
++-------------------+---------------------------------------------------------+
+|  plone2.5_theme:  | Tema para Plone 2.5                                     |
++-------------------+---------------------------------------------------------+
+|  plone3_theme:    | Tema para Plone 3                                       |
++-------------------+---------------------------------------------------------+
+
++-----------------------------------------------------------------------------+
+| Buildout                                                                    |
++===================+=========================================================+
+| plone2.5_buildout | Buildout para instalações Plone 2.5                     |
++-------------------+---------------------------------------------------------+
+| plone3_buildout   | Buildout para instalação Plone 3 ou superior            |
++-------------------+---------------------------------------------------------+
+| plone_hosting     | Plone hosting: buildout com ZEO e Plone com versões     |
+|                   | abaixo de 3.2                                           |
++-------------------+---------------------------------------------------------+
+| portal_buildout   | Buildout para projetos Plone                            |
++-------------------+---------------------------------------------------------+
+| recipe            | Projeto de recipe para zc.buildout                      |
++-------------------+---------------------------------------------------------+
+| silva_buildout    | Buildout para projetos usando Silva                     |
++-------------------+---------------------------------------------------------+
+
++-----------------------------------------------------------------------------+
+| Desenvolvimento Python                                                      |
++===================+=========================================================+
+|  basic_namespace  | Projeto Python com namespace                            |
++-------------------+---------------------------------------------------------+
+|  nested_namespace | Projeto Python com namespace duplo (dois pontos no nome)|
++-------------------+---------------------------------------------------------+
+
++-----------------------------------------------------------------------------+
+| Desenvolvimento Zope                                                        |
++===================+=========================================================+
+|  basic_zope       | Um projeto Zope                                         |
++-------------------+---------------------------------------------------------+
+
+Modelos da Simples Consultoria
+===============================
+
+Em adição aos modelos existentes no **ZopeSkel**, a Simples Consultoria 
+implementou novos modelos com base em nossa experiência com projetos Plone.
+
+Foram criados pacotes especializados para cada novo template e estes pacotes 
+são dependências do **sc.dev.core**, portanto ao instalar a última versão do 
+**sc.dev.core** são instaladas as últimas versões destes templates.
+
+sc.paster.buildout
+-------------------
+
++-----------------------------------------------------------------------------+
+| Buildout                                                                    |
++===================+=========================================================+
+| portal_buildout   | Buildout para projetos Plone                            |
++-------------------+---------------------------------------------------------+
+
+sc.paster.package
+------------------
+
++-----------------------------------------------------------------------------+
+| Desenvolvimento Plone                                                       |
++===================+=========================================================+
+|  portal_package   | Package usado em projetos Plone                         |
++-------------------+---------------------------------------------------------+
+
+sc.paster.policy
+----------------
+
++-----------------------------------------------------------------------------+
+| Desenvolvimento Plone                                                       |
++===================+=========================================================+
+|  portal_policy    | Portal Policy para projetos Plone                       |
++-------------------+---------------------------------------------------------+
+
+sc.paster.theme
+----------------
+
++-----------------------------------------------------------------------------+
+| Temas para Plone                                                            |
++===================+=========================================================+
+|  portal_theme     | Tema visual para projetos Plone                         |
++-------------------+---------------------------------------------------------+
+
+Usando os modelos
+=================
+
+A utilização dos modelos, tanto os específicos da Simples Consultoria como os 
+existentes via ZopeSkel, é feita através do comando **paster**. Este comando 
+deve estar no path do seu sistema operacional após a ativação do virtualenv que 
+contém o **sc.dev.core**.
+
+O uso, para criação de um projeto/pacote a partir de um modelo existente, é 
+feito com o subcomando *create* e a opção *-t*, que indica qual template será utilizado 
+::
+
+    paster create -t <nome-do-template> <caminho>
+    
+Ou seja, para criarmos um buildout para Plone 3 na pasta projetos/clienteA 
+abaixo da pasta de usuário:
+::
+    
+    $ cd ~/
+    $ mkdir -p projetos/clienteA/
+    $ paster create -t plone3_buildout buildout
+
+Ao executarmos este template, recebemos uma mensagem dizendo que o método 
+preferencial de instalação do Plone a partir da versão 3.1 é utilizar o 
+instalador disponível para cada plataforma. Esta mensagem pode ser ignorada.
+
+::
+
+    Selected and implied templates:
+      ZopeSkel#plone3_buildout  A buildout for Plone 3 installation
+    
+    Variables:
+      egg:      buildout
+      package:  buildout
+      project:  buildout
+     
+    **************************************************************************
+    **   *** NOTE: You probably don't want to use this template!
+    
+    **  Since Plone 3.1, the preferred way to get a buildout-based setup
+    **  for Plone is to use the standard installer for your operating
+    **  system (the Windows installer, the Mac installer, or the Unified
+    **  Installer for Linux/Unix/BSD). These give you a best-practice,
+    **  widely-used setup with an isolated Python and a well-documented
+    **  buildout. This template is here for older versions of Plone and
+    **  for experts who explicitly want a raw, non-installer-based
+    **  installation.
+    
+    **  (This message is particularly aimed at people following out-of-
+    **  date books/documentation that suggest this is the right way to get
+    **  a Plone-based buildout. This is no longer the case.)
+    **************************************************************************
+
+
+
+Logo em seguida temos uma pergunta sobre qual o modo do assistente será 
+utilizado: easy, expert ou all.
+
+Enquanto o primeiro modo assume diversos valores padrão, o modo all permite 
+uma configuração muito mais detalhada.
+::
+
+    Expert Mode? (What question mode would you like? (easy/expert/all)?) ['easy']:
+    
+.. note:: Como regra geral utilize o modo all ou configure valores padrão que 
+          sejam adequados para o nosso ambiente.
+
+Modelos da Simples Consultoria
+==================================
+
+O uso dos modelos da Simples Consultoria é similar ao de qualquer outro modelo 
+existente no ZopeSkel. 
+::
+
+    $ paste create -t <nome-do-template> caminho
+
+A diferença está no produto gerado que será aderente às práticas e modelos da 
+Simples Consultoria.
+
+sc.paster.buildout
+------------------
+
+Cria buildout para Plone 3.x e 4.x já incluindo configurações de blob storage e 
+arquivos de configuração especializados.
+
+base.cfg
+    Configuração base para todos os ambientes. Deve contar com a versão correta 
+    do Plone e carregar produto de policy para o projeto.
+
+desenvolvimento.cfg
+    Usado durante o processo de desenvolvimento, configura log verboso, modo de 
+    debug e segurança detalhada (implementação em Python). Esta configuração 
+    inclui pacotes para desenvolvimento, como o Products.PDBMode, 
+    Products.Gloworm e Products.PrintingMailHost. Nesta configuração incluimos 
+    o uso do Mr.Developer e seu objetivo é focar na **flexibilidade**
+
+homloga.cfg
+    Configuração para ambiente de homologação pelo cliente. Apesar de também 
+    utilizar código direto de um *vcs*, este arquivo elimina pacotes de 
+    desenvolvimento e deve presar pela **estabilidade**.
+
+producao.cfg
+    Configuração para uso em ambiente de produção. Esta configuração não deve 
+    apontar para nenhum produto/pacote proveniente de um *vcs* e deve ser 
+    focada em **performance**.
+
+sources.cfg
+    Com o uso do Mr.Developer este arquivo deve conter a listagem de TODOS os 
+    pacotes que estão em desenvolvimento -- ou que são utilizados a partir de 
+    um *vcs*. Estes pacotes estão listados, um por linha, abaixo da seção 
+    *sources*.
+

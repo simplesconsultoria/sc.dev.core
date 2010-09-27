@@ -1,0 +1,96 @@
+*************************
+Configurando o ambiente
+*************************
+
+Acesso via proxy
+================
+
+Caso seu acesso internet seja feito através de um proxy é necessária a 
+configuração do mesmo no sistema operacional para que o Python -- através da 
+biblioteca urllib consiga acessar repositórios externos.
+
+Windows
+-------
+
+* Clique com o botão direito em 'Meu Computador'
+
+* Clique na aba 'Avançado'
+
+* Clique em 'Variáveis de Ambiente'
+
+* Adicione as seguintes variáveis de ambiente (valores de exemplo entre 
+  parênteses)
+    
+    * http_proxy (http://meuproxy:3128)
+    
+    * https_proxy (http://meuproxy:3128)
+    
+    * ftp_proxy (http://meuproxy:3128)
+
+MacOS e Linux
+---------------
+
+Na linha de comando digite:
+::
+
+    $ export http_proxy="http://meuproxy:3128"
+    $ export https_proxy="http://meuproxy:3128"
+    $ export ftp_proxy="http://meuproxy:3128"
+
+.. note:: Estes comandos podem ser adicionados aos seus arquivos de
+          inicialização (ex:.profile, .bash_profile) para que as configurações
+          não sejam perdidas
+
+    
+Repositórios de pacotes
+=========================
+
+A instalação do pacote **collective.dist** habilita o suporte à utilização de 
+múltiplos repositórios de pacotes para interpretadores Python.
+
+.. note:: Este suporte é incluido em versões mais recentes do Python.
+
+Com este suporte é possível publicar -- fazer o release de -- pacotes não 
+apenas no repositório *oficial* da comunidade Python, o Pypi 
+(http://pypi.python.org), mas também em outros repositórios públicos como o 
+existente no site Plone (http://plone.org/products/) ou em repositórios privados 
+ou não acessíveis na Internet.
+
+Arquivo .pypirc
+-----------------
+
+O suporte aos múltiplos repositórios é configurado no arquivo **.pypirc** 
+localizado na raiz da pasta do usuário.
+
+Uma configuração de exemplo contendo informações para o pypi.python.org, o 
+repositório de produtos do plone.org e um repositório privado pode ser visto 
+abaixo.
+::
+
+    [distutils]
+    index-servers =
+        pypi
+        plone.org
+        mycompany
+
+
+    [pypi]
+    username:user
+    password:password
+
+    [plone.org]
+    repository:http://plone.org/products
+    username:ploneuser
+    password:password
+
+    [mycompany]
+    repository:http://my.company/products
+    username:user
+    password:password
+
+.. note:: Não se esqueça de criar suas contas tanto no Pypi quanto no site do 
+          Plone. Estas informações são úteis para o release de pacotes e 
+          documentação de erros encontrados.
+
+Para outras referências sobre o **collective.dist** acesse
+http://pypi.python.org/python/collective.dist .
