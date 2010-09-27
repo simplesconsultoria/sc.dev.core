@@ -72,52 +72,6 @@ criação de pacotes
 |  basic_zope       | Um projeto Zope                                         |
 +-------------------+---------------------------------------------------------+
 
-Modelos da Simples Consultoria
-===============================
-
-Em adição aos modelos existentes no **ZopeSkel**, a Simples Consultoria 
-implementou novos modelos com base em nossa experiência com projetos Plone.
-
-Foram criados pacotes especializados para cada novo template e estes pacotes 
-são dependências do **sc.dev.core**, portanto ao instalar a última versão do 
-**sc.dev.core** são instaladas as últimas versões destes templates.
-
-sc.paster.buildout
--------------------
-
-+-----------------------------------------------------------------------------+
-| Buildout                                                                    |
-+===================+=========================================================+
-| portal_buildout   | Buildout para projetos Plone                            |
-+-------------------+---------------------------------------------------------+
-
-sc.paster.package
-------------------
-
-+-----------------------------------------------------------------------------+
-| Desenvolvimento Plone                                                       |
-+===================+=========================================================+
-|  portal_package   | Package usado em projetos Plone                         |
-+-------------------+---------------------------------------------------------+
-
-sc.paster.policy
-----------------
-
-+-----------------------------------------------------------------------------+
-| Desenvolvimento Plone                                                       |
-+===================+=========================================================+
-|  portal_policy    | Portal Policy para projetos Plone                       |
-+-------------------+---------------------------------------------------------+
-
-sc.paster.theme
-----------------
-
-+-----------------------------------------------------------------------------+
-| Temas para Plone                                                            |
-+===================+=========================================================+
-|  portal_theme     | Tema visual para projetos Plone                         |
-+-------------------+---------------------------------------------------------+
-
 Usando os modelos
 =================
 
@@ -188,8 +142,10 @@ uma configuração muito mais detalhada.
 Modelos da Simples Consultoria
 ==================================
 
-O uso dos modelos da Simples Consultoria é similar ao de qualquer outro modelo 
-existente no ZopeSkel. 
+Em adição aos modelos existentes no **ZopeSkel**, a Simples Consultoria 
+implementou novos modelos com base em nossa experiência com projetos Plone.
+
+Seu uso é similar ao de qualquer outro modelo existente no ZopeSkel. 
 ::
 
     $ paste create -t <nome-do-template> caminho
@@ -197,8 +153,18 @@ existente no ZopeSkel.
 A diferença está no produto gerado que será aderente às práticas e modelos da 
 Simples Consultoria.
 
+Foram criados pacotes especializados para cada novo template e estes pacotes 
+são dependências do **sc.dev.core**, portanto ao instalar a última versão do 
+**sc.dev.core** são instaladas as últimas versões destes templates.
+
 sc.paster.buildout
-------------------
+-------------------
+
++-----------------------------------------------------------------------------+
+| Buildout                                                                    |
++===================+=========================================================+
+| portal_buildout   | Buildout para projetos Plone                            |
++-------------------+---------------------------------------------------------+
 
 Cria buildout para Plone 3.x e 4.x já incluindo configurações de blob storage e 
 arquivos de configuração especializados.
@@ -229,4 +195,31 @@ sources.cfg
     pacotes que estão em desenvolvimento -- ou que são utilizados a partir de 
     um *vcs*. Estes pacotes estão listados, um por linha, abaixo da seção 
     *sources*.
+
+sc.paster.package
+------------------
+
++-----------------------------------------------------------------------------+
+| Desenvolvimento Plone                                                       |
++===================+=========================================================+
+|  portal_package   | Package usado em projetos Plone                         |
++-------------------+---------------------------------------------------------+
+
+sc.paster.policy
+----------------
+
++-----------------------------------------------------------------------------+
+| Desenvolvimento Plone                                                       |
++===================+=========================================================+
+|  portal_policy    | Portal Policy para projetos Plone                       |
++-------------------+---------------------------------------------------------+
+
+sc.paster.theme
+----------------
+
++-----------------------------------------------------------------------------+
+| Temas para Plone                                                            |
++===================+=========================================================+
+|  portal_theme     | Tema visual para projetos Plone                         |
++-------------------+---------------------------------------------------------+
 

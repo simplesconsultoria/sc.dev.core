@@ -2,14 +2,16 @@
 Padrões de desenvolvimento da Simples Consultoria
 ###################################################
 
-Conteúdo:
+*********************
+Índice
+*********************
 
 .. toctree::
    :maxdepth: 2
 
    introducao
    ambiente
-   configuracoes
+   configuracao
    pacotes
    releases
    boaspraticas
