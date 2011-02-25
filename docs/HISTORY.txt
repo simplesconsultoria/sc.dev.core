@@ -1,7 +1,7 @@
 Changelog
 =========
 
-20110225.1 (unreleased)
+20110225.1 (2011-02-25)
 -----------------------
 
 * Adding a basic portuguese documentation [erico_andrei]
