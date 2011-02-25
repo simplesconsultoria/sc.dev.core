@@ -1,10 +1,12 @@
 Changelog
 =========
 
-20100908.3 (unreleased)
+20110225.1 (unreleased)
 -----------------------
 
-- Nothing changed yet.
+* Adding a basic portuguese documentation [erico_andrei]
+
+* Addind dependencies to i18ndude, Sphinx and rst2pdf [erico_andrei]
 
 
 20100908.02 (2010-09-08)

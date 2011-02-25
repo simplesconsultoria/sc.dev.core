@@ -205,6 +205,33 @@ sc.paster.package
 |  portal_package   | Package usado em projetos Plone                         |
 +-------------------+---------------------------------------------------------+
 
+Este template é utilizado para a criação de pacotes Python com 3 níveis -- 
+sendo 2 de namespaces e 1 do pacote propriamente dito -- para uso em projetos 
+Plone.
+
+Os pacotes gerados por este template já incluem um profile padrão -- default
+-- mecanismo para upgrades, utilizando Generic Setup, e configurações de 
+dependências.
+
+O padrão de nomes utilizado na Simples Consultoria para este tipo de pacote 
+segue a linha *sc.cliente.projeto*, onde:
+
+sc
+    Define que este pacote foi desenvolvido pela Simples Consultoria para 
+    um de seus projetos ou clientes.
+
+cliente
+    Nome do cliente sendo atendido. Caso seja um pacote genérico -- produto 
+    utilizado pela Simples Consultoria em diversos projetos e/ou clientes 
+    este namespace deve conter a linha do produto. ex: dev, social, base.
+
+projeto
+    Projeto atendido por este pacote. Caso o projeto tenha diversos pacotes 
+    este nome deve explicitar qual a funcionalidade implementada.
+
+.. note:: Saiba mais sobre o padrão de nomes da Simples Consultoria na seção
+          de boas práticas
+
 sc.paster.policy
 ----------------
 
@@ -213,6 +240,44 @@ sc.paster.policy
 +===================+=========================================================+
 |  portal_policy    | Portal Policy para projetos Plone                       |
 +-------------------+---------------------------------------------------------+
+
+Template para a criação de pacotes com políticas para novos portais usando 
+Plone.
+
+Este template é utilizado em todos os projetos desenvolvidos pela Simples 
+Consultoria para a configuração -- e gestão de dependências -- do projeto.
+
+O padrão de nomenclatura de pacotes criados com este template é similar ao 
+utilizado no portal_package apenas substituindo-se o nome do projeto pelo 
+termo **policy**. ex: *sc.cliente.policy*.
+
+Pacotes criados com este template possuem código para controle de 
+dependências e upgrades.
+
+Todas as dependências são listadas em três arquivos: setup.py, config.py e 
+dependencies.zcml.
+
+A inclusão de uma dependência dentro do arquivo setup.py objetiva sua 
+inclusão automática pelo mecanismo de distutils. As dependências declaradas 
+neste arquivo são listadas na seção **install_requires** e devem seguir 
+o padrão::
+
+      install_requires=[
+          # -*- Extra requirements: -*-
+          'sc.paster.package==0.5.3',
+      ],
+
+No exemplo acima a dependência a ser instalada é o *sc.paster.package* na
+versão 0.5.3. Caso seja necessário especificar um limite superior para a 
+versão da dependência a ser utilizada deve-se substituir o comparador 
+**==** por **<=**. No cenário de ser necessário um limite inferior -- versão
+mínima -- o comparador será **>=**.
+
+Quando o pacote de política, criado por este template, for incluido em uma 
+configuração de buildout, as dependências listadas no setup.py serão 
+obtidas, automaticamente, quando da execução do buildout.
+
+ 
 
 sc.paster.theme
 ----------------

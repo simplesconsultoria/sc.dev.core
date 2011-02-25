@@ -2,9 +2,7 @@
 Padrões de desenvolvimento da Simples Consultoria
 ###################################################
 
-*********************
 Índice
-*********************
 
 .. toctree::
    :maxdepth: 2
