@@ -24,14 +24,17 @@ setup(name='sc.dev.core',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'sc.paster.package==0.5.3',
-          'sc.paster.buildout==0.5.3',
-          'sc.paster.policy==0.6.2',
-          'sc.paster.theme==0.6.5.1',
+          'sc.paster.package==0.7',
+          'sc.paster.buildout==0.7',
+          'sc.paster.policy==0.7',
+          'sc.paster.theme==0.7',
           'setuptools-git==0.3.4',
           'collective.dist==0.2.5',
           'zest.releaser==3.12',
-          'collective.dist==0.2.5'
+          'collective.dist==0.2.5',
+          'Sphinx==1.0.4',
+          'rst2pdf==0.16',
+          'i18ndude==3.2.2',
       ],
       entry_points="""
       # -*- Entry points: -*-
