@@ -26,6 +26,10 @@ Ferramentas de desenvolvimento
 
 * Subversion
 
+* Mercurial
+
+* Git
+
 * Python 2.4
 
 
