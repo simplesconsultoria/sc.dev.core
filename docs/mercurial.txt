@@ -1,0 +1,202 @@
+*********************
+Mercurial (HG)
+*********************
+
+Introduções
+======================
+
+O Mercurial (hg) é um sistema de controle de versões, assim como CVS, Subversion 
+e Git. 
+
+Assim como o Git, e diferentemente de CVS e Subversion, o Mercurial é baseado 
+em uma estrutura de repositórios distribuídos, ou seja, não existe a dependência 
+de que o repositório central esteja acessível para que transações de 
+versionamento ocorram.
+
+Para alcançar esta descentralização o Mercurial implementa repositórios locais 
+que contém todo o histórico dos dados que ele versiona. Para quem está 
+acostumado com o modus-operandi do Subversion, seria como se cada checkout se 
+tornasse um repositório local contendo histórico de todas as transações 
+anteriores e permitindo ao usuário a realização de commits, reverts, etc, 
+localmente, sendo que este novo histórico de transações pode ser integrado ao 
+repositório original a qualquer momento.
+
+O objetivo deste texto é apresentar rapidamente o Mercurial e apontar para 
+recursos nas interwebs onde seja possível se aprofundar no assunto.
+
+É importante reforçar que, na Simples Consultoria, o Mercurial é o padrão para
+controle de versões dos projetos a partir de abril de 2011. Projetos antigos em 
+Subversion (https://simplesnet.com.br/svn/) serão gradualmente migrados para o 
+Bitbucket (https://bitbucket.org).
+
+.. warning::
+    Projetos/Pacotes hospedados em repositórios do Plone ou do Zope, continuam  
+    sendo mantidos com Subversion. Alguns projetos de clientes ainda usarão Git.
+
+
+Instalando
+======================
+
+Caminho fácil
+--------------
+
+O jeito fácil e rápido de começar a trabalhar com o Mercurial é através do uso 
+de uma ferramenta com interface gráfica. A mais famosa delas é o TortoiseHg.
+
+Para sua instalação acesse http://tortoisehg.bitbucket.org/, baixe a versão 
+para o seu sistema operacional e a instale.
+
+Caso queira instalar apenas a linha de comando, use o gerenciador de pacotes 
+do seu sistema operacional e/ou baixe o instalador diretamente do site do 
+`Mercurial <http://mercurial.selenic.com/downloads/>`_
+
+Configurações Básicas
+=======================
+
+Após a instalação é recomendável passar pelo processo de configuração do 
+seu ambiente Mercurial.
+
+Geralmente as configurações são armazenadas em um arquivo **.hgrc** na raiz 
+de sua pasta de usuário (**Mercurial.ini** em ambientes Windows)
+
+.. warning::
+    Em sistemas operacionais como Linux e MacOSX, este arquivo -- por ter seu 
+    nome iniciando com um **.** -- é oculto por padrão.
+
+Edite este arquivo com seu editor de preferência colocando, ao menos, as 
+informações referentes a seu username e editor de texto de preferência::
+
+    [ui]
+    username = Douglas Adams <dontpanic@simplesconsultoria.com.br>
+    editor = vim
+    
+Como exemplos de valores para a configuração de **editor**
+
+    * Windows: **Notepad** ou **'C:/Program Files/Notepad++/notepad++.exe' 
+      -multiInst -notabbar -nosession -noPlugin**
+
+    * MacOSX: **mate -w**
+
+    * Linux: **gvim --nofork** ou **vim**
+
+Melhorando a vida no Bitbucket
+--------------------------------
+
+Para evitar o trabalho de toda vez ter que informar usuário e senha de acesso 
+ao Bitbucket, é recomendável realizar as seguintes configurações no seu 
+arquivo de configuração do Mercurial::
+
+    [auth]
+    bitbucket.prefix = https://bitbucket.org
+    bitbucket.username = meu_username
+
+A configuração acima informa que para o prefixo https://bitbucket.org o 
+Mercurial sempre utilizará o username definido em **bitbucket.username**
+
+Outra ferramenta interessante é o uso da extensão que realiza a integração com 
+o sistema de gerenciamento de senhas do sistema operacional. Esta extensão, 
+**mercurial_keyring** vem com a instalação padrão do Mercurial e pode ser 
+ativada com a sua adição à seção [extensions] do arquivo de configuração::
+
+    [extensions]
+    mercurial_keyring = 
+
+Outras melhorias
+-----------------
+
+Extensões possibilitam a adição de novas funcionalidades ao Mercurial. Elas 
+estão todas listadas em http://mercurial.selenic.com/wiki/UsingExtensions e 
+das disponíveis na instalação padrão, duas se destacam::
+
+    [extensions]
+    color =
+    convert = 
+
+A Color extension habilita o uso de cores nas respostas de diffs e outros 
+comandos do Mercurial.
+
+Convert é a extensão usada para, como o nome indica, converter repositórios de 
+outros formatos de controle de versão para o formato do Mercurial. Dado o 
+histórico dos usos feitos na Simples Consultoria de Subversion e Git, é sábio 
+deixar esta extensão configurada.
+
+Usando o Mercurial
+===================
+
+.. note::
+    Em vários momentos faremos alusões ao uso do Subversion, que podem ser 
+    diligentemente ignoradas se você não tiver trabalhado com este sistema 
+    durante os últimos anos.
+
+Vamos apresentar o uso do Mercurial com base em dois cenários de partida. 
+
+O primeiro é similar ao modelo Subversion, com um repositório central que será 
+a base e referência para o trabalho. 
+
+O cenário alternativo parte de um diretório local, que será convertido em 
+repositório e que posteriormente pode ser colocado em um repositório central.
+
+Cenário: Repositório Central
+------------------------------
+
+Como no modelo centralizado do Subversion, vamos "baixar", inicialmente, os 
+dados a partir de um repositório.
+
+Para tanto, o comando a ser utilizado será::
+    
+    hg clone https://bitbucket.org/simplesconsultoria/products.zpyodbcda
+
+Isto criará um **repositório local** chamado products.zpyodbcda na pasta atual. 
+Assim como no Subversion é possível dar um nome arbitrário a cópia local dos 
+dados::
+
+    hg clone https://bitbucket.org/simplesconsultoria/products.zpyodbcda Products.ZPyODBCDA
+    
+Criará o repositório local com o nome de Products.ZPyODBCDA na pasta atual.
+
+A diferença aqui é que não temos apenas uma **cópia de trabalho** do repositório
+central e sim um **repositório local**, que contém todo o histórico do 
+repositório central -- até o momento de sua clonagem -- e que suporta a 
+realização de novas transações e a criação de seu histórico.
+
+Por exemplo, após alterar o código do arquivo setup.py dentro de  
+Products.ZPyODBCDA, é possível realizar um commit, da mesma maneira que 
+seria feito no Subversion::
+
+    hg commit setup.py
+
+Gerando assim um novo REV, que é o número de revisão, e mantendo o histórico 
+das versões anteriores -- possibilitando a volta a qualquer ponto arbitrário 
+da história deste arquivo.
+
+A diferença em relação ao Subversion é que esta revisão está apenas no nosso 
+repositório local, não afetando assim o histórico do repositório central.
+
+Este modelo distribuido permite, entre outras coisas, commits menores e mais 
+constantes, possibilitando pequenas alterações caso necessário.
+
+Para que as alterações de nosso repositório local sejam replicadas no 
+repositório central, realizamos o push de nosso histórico::
+
+    hg push
+    
+.. note::
+    
+    É possível manter diferentes repositórios sincronizados. Para tanto apenas 
+    informe o endereço do repositório que estas alterações seram enviadas. Ex:
+    hg push https://meuoutrorepos/
+
+É importante que também nos mantenhamos atualizados com as alterações já 
+enviadas por outros para o repositório central. Para tanto utilizamos o comando 
+pull::
+
+    hg pull
+    
+Que sincroniza, mas não aplica, as últimas alterações realizadas no repositório 
+central.
+
+Para aplicar estas alterações -- efetivamente realizando o merge com o código no
+repositório local -- utilizamos  o comando update::
+
+    hg update
+
