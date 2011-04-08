@@ -10,7 +10,7 @@ Padrões de desenvolvimento da Simples Consultoria
    introducao
    ambiente
    configuracao
-   mercurial
+   vcs/index
    pacotes
    releases
    boaspraticas

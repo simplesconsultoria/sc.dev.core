@@ -1,5 +1,5 @@
 *********************
-Mercurial (HG)
+Mercurial (hg)
 *********************
 
 Introduções
@@ -60,7 +60,7 @@ Geralmente as configurações são armazenadas em um arquivo **.hgrc** na raiz
 de sua pasta de usuário (**Mercurial.ini** em ambientes Windows)
 
 .. warning::
-    Em sistemas operacionais como Linux e MacOSX, este arquivo -- por ter seu 
+    Em sistemas operacionais como Linux e MacOS, este arquivo -- por ter seu 
     nome iniciando com um **.** -- é oculto por padrão.
 
 Edite este arquivo com seu editor de preferência colocando, ao menos, as 
@@ -75,7 +75,7 @@ Como exemplos de valores para a configuração de **editor**
     * Windows: **Notepad** ou **'C:/Program Files/Notepad++/notepad++.exe' 
       -multiInst -notabbar -nosession -noPlugin**
 
-    * MacOSX: **mate -w**
+    * MacOS: **mate -w**
 
     * Linux: **gvim --nofork** ou **vim**
 
@@ -148,7 +148,9 @@ init          Cria e inicializa repositório local
 add           Adiona arquivos/diretórios a um repositório
 clone         Clona localmente um repositório remoto
 commit        Efetiva e documenta alterações
+diff          Exibe diferenças no repositório ou em arquivos listados
 log           Exibe histórico
+status        Exibe alterações dos conteúdos no repositório local
 revert        Reverte alterações para a rev anterior do diretório local
 rollback      Desfaz sua última ação (pull, commit, import)
 pull          Sincroniza com outro repositório
