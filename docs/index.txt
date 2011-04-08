@@ -14,4 +14,10 @@ Padrões de desenvolvimento da Simples Consultoria
    pacotes
    releases
    boaspraticas
+
+Histórico deste pacote
+
+.. toctree::
+   :maxdepth: 2
    
+   HISTORY

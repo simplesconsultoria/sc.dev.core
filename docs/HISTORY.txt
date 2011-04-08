@@ -4,7 +4,7 @@ Changelog
 20110225.2 (unreleased)
 -----------------------
 
-- Nothing changed yet.
+* Added Mercurial reference [erico_andrei]
 
 
 20110225.1 (2011-02-25)
