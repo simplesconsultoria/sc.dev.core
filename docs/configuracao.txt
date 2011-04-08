@@ -94,3 +94,4 @@ abaixo.
 
 Para outras referências sobre o **collective.dist** acesse
 http://pypi.python.org/python/collective.dist .
+
