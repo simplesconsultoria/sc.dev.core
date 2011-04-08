@@ -137,8 +137,22 @@ do intepretador do sistema.
           de conflitos de versão ou dependências entre pacotes Python usados por 
           diferentes aplicações
 
-sc.dev.core
----------------
+A criação de novos ambientes Python é simples:
+::
+    
+    ~/python/bin/virtual-env-2.4 --no-site-packages py24
+    
+Cria um novo ambiente com Python 2.4 na pasta py24.
+
+Para usar Python 2.6, execute o comando:
+::
+
+    ~/python/bin/virtual-env-2.6 --no-site-packages py26
+
+Que criará uma pasta py26 com o novo ambiente.
+
+O Jeito Simples: sc.dev.core
+----------------------------------------
 
 Finalidade
 **********
@@ -149,14 +163,16 @@ o desenvolvimento de soluções Plone pela Simples Consultoria.
 Componentes
 ************
 
-* sc.paster.package (0.5.3)
-* sc.paster.buildout (0.5.3)
-* sc.paster.policy (0.6.2)
-* sc.paster.theme (0.6.5.1)
-* setuptools-git (0.3.4)
-* collective.dist (0.2.5)
-* zest.releaser (3.12)
-* collective.dist (0.2.5)
+* sc.paster.package
+* sc.paster.buildout
+* sc.paster.policy
+* sc.paster.theme
+* setuptools-git
+* zest.releaser
+* collective.dist
+* Sphinx
+* rst2pdf
+* i18ndude
 
 Preparando a instalação
 ***********************
@@ -189,3 +205,123 @@ acabamos de ativar.
 
 .. note:: A opção -U garante que mesmo que já tenhamos este pacote instalado 
           procuraremos por uma nova versão e a instalaremos.
+
+O que ele instala
+******************
+
+sc.paster.package
+    Implenenta modelo para criação de pacotes Python com 3 níveis (ex:sc.cliente.projeto).
+
+sc.paster.buildout
+    Implementa modelo de buildout.
+
+sc.paster.policy
+    Implementa modelo para criação de pacotes Python de políticas em portais Plone.
+
+sc.paster.theme
+    Implementa modelo para criação de pacotes Python de temas para portais Plone.
+    
+setuptools-git
+    Pacote Python que facilita a integração entre setuptools e Git.
+
+collective.dist
+    Suporte a múltiplos repositórios de pacotes para o setuptools.
+
+zest.releaser
+    Scripts para automatização de releases de pacotes Python.
+
+Sphinx
+    Ferramenta para a criação de documentação a partir de arquivos ReST.
+
+rst2pdf
+    Geração de arquivos PDF a partir de arquivos ReST.
+
+i18ndude
+    Ferramenta para automatização de tarefas relacionadas a internaciolização (i18n).
+
+Contas, contas e contas
+-------------------------
+
+Além da sua conta da Simplesnet e da sua conta de e-mail, que são criadas quando 
+da sua contratação, é necessário, para o dia a dia do seu trabalho, a criação de 
+contas em alguns serviços externos.
+
+BitBucket
+    Provedor de soluções Mercurial. Onde hospedamos nossos repositórios
+
+Plone.org
+    Portal da comunidade Plone e local dos repositórios de código do produto.
+
+PyPi
+    Repositório de pacotes Python. Local onde publicamos nossas contribuições à comunidade.
+
+BitBucket
+^^^^^^^^^^
+
+Nossos repositórios estão hospedados no BitBucket sob a conta simplesconsultoria 
+e para acessá-los é necessária a criação de uma conta no serviço.
+
+Crie sua conta em https://bitbucket.org/account/signup/ e requisite a alguém de 
+nossa equipe de infra a permissão para acesso aos repositórios. Não esqueça de 
+informar qual o seu username.
+
+Plone.org
+^^^^^^^^^^
+
+Crie uma conta no site Plone.org em http://plone.org/@@register. Esta conta 
+permite acesso ao site, criação de conteúdo em algumas áreas do site e, o mais 
+importante, a possibilidade de criar tickets e reportar problemas para os 
+mantenedores do Plone.
+
+Para ver os tickets abertos acesse https://dev.plone.org/plone/report. Este 
+endereço requer usuário e senha ativos no Plone.org. 
+
+Para criar um novo ticket a url é https://dev.plone.org/plone/newticket. Preste 
+muita atenção na caixa que lista o componente ao qual o ticket se refere pois 
+esta seleção é essencial ao rápido endereçamento de sua requisição.
+
+Aqui na Simples Consultoria nos sentimos na responsabilidade de não só apontar 
+os problemas mas também resolvê-los. Para tanto precisamos de acesso aos 
+respositórios de código do Plone, que estão divididos da seguinte maneira:
+
+Plone (https://svn.plone.org/svn/plone)
+    Componentes principais do Plone.
+
+Archetypes (https://svn.plone.org/svn/archetypes)
+    Componentes relacionados ao framework Archetypes.
+
+Collective (https://svn.plone.org/svn/collective)
+    Componentes de terceiros. Local onde boa parte dos add-ons do Plone é mantido.
+
+O acesso ao primeiro repositório é restrito ao preenchimento de um documento, 
+o `Contributors Agreement <http://plone.org/foundation/contributors-agreement/agreement.pdf/view>`_,
+e a um processo de aprovação. 
+
+Os dois repositórios seguintes Archetypes e Collective são de uso frequente por
+nossa equipe, portanto você possuir acesso de commit a eles. O acesso é 
+concedido após a criação de `um ticket <https://dev.plone.org/plone.org/newticket>`_ 
+e a sua categorização como **commitaccess**. 
+
+Informe neste ticket que você deseja acesso ao Collective e que você trabalha na 
+Simples Consultoria e que ajudará na manutenção de produtos existentes neste 
+repositório.
+
+PyPi
+^^^^^
+
+O PyPi (Python Package Index) é o repositório central de pacotes da linguagem 
+Python. Apesar de ser um esforço relativamente recente ele é o local onde as 
+comunidades de produtos desenvolvidos com Python contribuem seus códigos.
+
+A criação de uma conta no PyPi é relativamente simples. Acesse a url de cadastro 
+em http://pypi.python.org/pypi?:action=register_form , preencha o formulário e 
+confirme seu registro ao visitar o link enviado por email. 
+
+Após a criação de sua conta, converse com nossa equipe de infra-estrutura para 
+que seu usuário ganhe permissão de acesso (e administração) dos pacotes 
+disponibilizados pela Simples Consultoria.
+
+.. note::No PyPi é possível utilizar seu OpenId como forma de autenticação, mas 
+         não temos nenhuma experiência do OpenId no processo automatizado de 
+         release de pacotes.
+
