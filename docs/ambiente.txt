@@ -27,7 +27,7 @@ ou Linux as ferramentas abaixo **DEVEM** estar instaladas e configuradas:
 * Editor de texto (ver descrição sobre recomendações para cada OS)
 
 * Navegadores web: Chrome, Firefox e específicos da plataforma (Internet 
-Explorer, Safari, Konqueror)
+  Explorer, Safari, Konqueror)
 
 * No Firefox e no Chrome: Firebug
 
@@ -191,6 +191,7 @@ Um bom local seria uma pasta *simples/dev* também na raiz da pasta do usuário.
           
 O passo seguinte é ativar este virtualenv.
 ::
+    
     source ~/simples/dev/bin/activate
 
 
@@ -240,7 +241,7 @@ i18ndude
     Ferramenta para automatização de tarefas relacionadas a internaciolização (i18n).
 
 Contas, contas e contas
--------------------------
+========================
 
 Além da sua conta da Simplesnet e da sua conta de e-mail, que são criadas quando 
 da sua contratação, é necessário, para o dia a dia do seu trabalho, a criação de 
@@ -256,7 +257,7 @@ PyPi
     Repositório de pacotes Python. Local onde publicamos nossas contribuições à comunidade.
 
 BitBucket
-^^^^^^^^^^
+----------
 
 Nossos repositórios estão hospedados no BitBucket sob a conta simplesconsultoria 
 e para acessá-los é necessária a criação de uma conta no serviço.
@@ -266,7 +267,7 @@ nossa equipe de infra a permissão para acesso aos repositórios. Não esqueça 
 informar qual o seu username.
 
 Plone.org
-^^^^^^^^^^
+----------
 
 Crie uma conta no site Plone.org em http://plone.org/@@register. Esta conta 
 permite acesso ao site, criação de conteúdo em algumas áreas do site e, o mais 
@@ -307,7 +308,7 @@ Simples Consultoria e que ajudará na manutenção de produtos existentes neste
 repositório.
 
 PyPi
-^^^^^
+--------
 
 O PyPi (Python Package Index) é o repositório central de pacotes da linguagem 
 Python. Apesar de ser um esforço relativamente recente ele é o local onde as 
