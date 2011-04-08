@@ -5,7 +5,31 @@ Ambiente de trabalho
 Preparação do ambiente
 ======================
 
-Simples Consultoria
+A Simples Consultoria trabalha primariamente com Plone, portanto as descrições 
+a seguir se referem às ferramentas, e configurações, mínimas para uma estação 
+de trabalho produtiva.
+
+Ferramentas Básicas
+--------------------
+
+Para o trabalho diário precisamos de um ambiente propício ao desenvolvimento de 
+aplicações web. Seja você desenvolvedor ou designer, usando Windows, MacOS, BSD 
+ou Linux as ferramentas abaixo **DEVEM** estar instaladas e configuradas:
+
+* Compilador C, C++ (ver descrição de qual a melhor solução para seu OS)
+
+* Mercurial
+
+* Subversion
+
+* Git
+
+* Editor de texto (ver descrição sobre recomendações para cada OS)
+
+* Navegadores web: Chrome, Firefox e específicos da plataforma (Internet 
+Explorer, Safari, Konqueror)
+
+* No Firefox e no Chrome: Firebug
 
 Sistema operacional
 -------------------
@@ -15,28 +39,27 @@ Windows
 
 * Garanta ter direitos de administrador sobre a máquina
 
-* Instale um editor de texto de sua preferência -- Ex: Notepad ++
+* Instale um editor de texto de sua preferência -- Ex: Notepad ++, Aptana
 
 * Instale ferramentas de desenvolvimento para Windows
 
-Ferramentas de desenvolvimento
+Ferramentas Básicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Mingw
+* Compilador C, C++: Mingw
 
-* Subversion
+* Python: Python 2.4 baixado do python.org
 
-* Mercurial
+Tornando a vida fácil
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Git
-
-* Python 2.4
-
+Para facilitar a vida de quem trabalha com Windows, disponibilizamos um pacote 
+com os componentes básicos a partir desta url: https://simplesnet.com.br/pacotes/catalogo/windowsbuildoutgoodies/releases/1.0/buildout_windows.zip
 
 MacOS
 *****
 
-* Editor de textos: vim, emacs, TextMate
+* Editor de textos: vim, emacs, TextMate, Aptana
 
 * XCode: Necessário para compilar extensões C do Zope e de alguns pacotes 
   Python. (http://developer.apple.com/TOOLS/Xcode/)
@@ -46,7 +69,7 @@ MacOS
 Linux (Ubuntu / Debian)
 ****************************
 
-* Editor de textos: vim, emacs, Gedit
+* Editor de textos: vim, emacs, Gedit, Aptana
 
 Instalação de pacotes
 ^^^^^^^^^^^^^^^^^^^^^^^^^

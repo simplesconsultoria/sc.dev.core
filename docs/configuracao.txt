@@ -2,6 +2,9 @@
 Configurando o ambiente
 *************************
 
+Para garantir maior produtividade e acesso a repositórios externos, existem 
+algumas pequenas configurações que devem ser realizadas.
+
 Acesso via proxy
 ================
 
@@ -41,20 +44,54 @@ Na linha de comando digite:
           inicialização (ex:.profile, .bash_profile) para que as configurações
           não sejam perdidas
 
+Subversion
+-----------
+
+Diferente de quase todo o resto das soluções utilizas, o Subversion não leva em 
+consideração as variáveis de ambiente http_proxy, https_proxy. 
+
+Para configurar o acesso através de um proxy, procure a pasta de configurações 
+do Subversion, usualmente **.subversion** e edite o arquivo **servers**
+::
+
+    vim ~/.subversion/servers
+
+No final do arquivo, dentro da seção **[global]**, edite as configurações 
+relacionadas ao proxy, com as informações passadas pelo administrador de rede.
+::
+
+    http-proxy-host = meuproxy
+    http-proxy-port = 3128
+    # http-proxy-username = defaultusername
+    # http-proxy-password = defaultpassword
+
+Como pode ser visto, é possível adicionarmos as informações de usuário e senha 
+para o proxy nas variáveis seguintes -- neste exemplo comentadas (iniciando com 
+**#**).
+
+Configurações salvas, é só testar o acesso do Subversion com um comando, como:
+::
     
+    svn co https://svn.plone.org/svn/collective/sc.dev.core/trunk sc.dev.core
+
+Que deve realizar o checkout da versão de desenvolvimento do sc.dev.core.
+
 Repositórios de pacotes
-=========================
+========================
 
 A instalação do pacote **collective.dist** habilita o suporte à utilização de 
 múltiplos repositórios de pacotes para interpretadores Python.
 
-.. note:: Este suporte é incluido em versões mais recentes do Python.
+.. note:: Este suporte é incluido em versões mais recentes do Python (>=2.6)
 
 Com este suporte é possível publicar -- fazer o release de -- pacotes não 
 apenas no repositório *oficial* da comunidade Python, o Pypi 
 (http://pypi.python.org), mas também em outros repositórios públicos como o 
 existente no site Plone (http://plone.org/products/) ou em repositórios privados 
 ou não acessíveis na Internet.
+
+.. note:: O **collective.dist** está incluído como dependência na instalação 
+          do **sc.dev.core**
 
 Arquivo .pypirc
 -----------------
@@ -94,4 +131,19 @@ abaixo.
 
 Para outras referências sobre o **collective.dist** acesse
 http://pypi.python.org/python/collective.dist .
+
+Penduricalhos no Python
+========================
+
+É possível configurar o comportamento padrão do interpretador Python em seu 
+computador.
+
+Estas configurações ficam armazenadas no arquivo **.pythonrc.py** na raiz da 
+pasta de seu usuário.
+
+Um exemplo de configuração é a inclusão do auto-complete, que pode ser realizada 
+editando o arquivo **.pythonrc.py** para conter o código abaixo:
+::
+    import rlcompleter, readline
+    readline.parse_and_bind('tab: complete')
 
