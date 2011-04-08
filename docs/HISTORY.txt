@@ -6,6 +6,8 @@ Changelog
 
 * Added Mercurial reference [erico_andrei]
 
+* Improved basic environment and configuration docs [erico_andrei]
+
 
 20110225.1 (2011-02-25)
 -----------------------
