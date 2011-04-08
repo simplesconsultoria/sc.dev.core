@@ -288,3 +288,14 @@ sc.paster.theme
 |  portal_theme     | Tema visual para projetos Plone                         |
 +-------------------+---------------------------------------------------------+
 
+Template para a criação de temas para novos portais usando Plone.
+
+Este template é utilizado na maioria dos projetos desenvolvidos pela Simples 
+Consultoria para a alteração do layout e design do portal.
+
+O padrão de nomenclatura de pacotes criados com este template é similar ao 
+utilizado no portal_package apenas substituindo-se o namespace **sc** pelo 
+namespace **beyondskins**, que agrupa os temas criados pela Simples Consultoria 
+ex: *beyondskins.cliente.projeto*.
+
+
