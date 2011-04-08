@@ -120,7 +120,7 @@ outros formatos de controle de versão para o formato do Mercurial. Dado o
 histórico dos usos feitos na Simples Consultoria de Subversion e Git, é sábio 
 deixar esta extensão configurada.
 
-Usando o Mercurial
+Mercurial 101
 ===================
 
 .. note::
@@ -135,6 +135,27 @@ a base e referência para o trabalho.
 
 O cenário alternativo parte de um diretório local, que será convertido em 
 repositório e que posteriormente pode ser colocado em um repositório central.
+
+Antes de apresentarmos os cenários, vamos listar alguns dos comandos usuais.
+
+Lista de comandos
+-------------------
+
+============ ===================================================================
+Comando       Descrição
+============ ===================================================================
+init          Cria e inicializa repositório local
+add           Adiona arquivos/diretórios a um repositório
+clone         Clona localmente um repositório remoto
+commit        Efetiva e documenta alterações
+log           Exibe histórico
+revert        Reverte alterações para a rev anterior do diretório local
+rollback      Desfaz sua última ação (pull, commit, import)
+pull          Sincroniza com outro repositório
+update        Atualiza a revisão local para a revisão do repositório principal
+push          Publica modificações locais para outro repositório
+merge         Realiza o merge com uma revisão específica
+============ ===================================================================
 
 Cenário: Repositório Central
 ------------------------------
@@ -195,8 +216,81 @@ pull::
 Que sincroniza, mas não aplica, as últimas alterações realizadas no repositório 
 central.
 
-Para aplicar estas alterações -- efetivamente realizando o merge com o código no
-repositório local -- utilizamos  o comando update::
+Para colocar nossa revisão atual em sincronia com a do repositório central 
+utilizamos  o comando update::
 
     hg update
+
+E para realizar o merge entre as alterações do repositório central e as suas, 
+utilizamos o comando merge::
+    
+    hg merge
+
+Para resumir, o ciclo é::
+
+     hg clone https://bitbucket.org/simplesconsultoria/products.zpyodbcda Products.ZPyODBCDA
+     <modificações>
+     hg commit
+     <modificações>
+     hg commit
+     <envio para repositório central>
+     hg push
+     <sincronização>
+     hg pull
+     <coloca como última revisão>
+     hg up
+     <realiza merge>
+     hg merge
+
+Cenário: Repositório Local
+------------------------------
+
+Considere uma pasta local, que você deseja colocar sob controle de versão. Como 
+exemplo vamos utilizar uma pasta, de produto recém criado pelo paster, chamada 
+sc.base.example.
+
+Manteremos esta pasta sob versionamento local até o momento em que seja 
+desejável termos contribuição externa, quando enviaremos nosso histórico para 
+um repositório central.
+
+O primeiro passo é, dentro da pasta que desejamos versionar, crie um novo 
+repositório digitando::
+
+    hg init
+
+A partir deste momento a pasta sc.base.example é um repositório Mercurial. 
+
+Para cada arquivo ou diretório abaixo desta pasta, que você deseje manter sob 
+controle de versão, é necessário realizar o comando **add** para adicioná-lo ao 
+repositório. Este comando aceita coringas (wildcards) para facilitar seu uso. 
+Veja alguns exemplos de uso::
+
+    hg add MANIFEST.in
+    hg.add setup.*
+    hg add sc/
+
+É possível realizar modificações, commitar e reverter alterações, como em um 
+repositório -- ou mesmo sistema de versionamento -- qualquer::
+
+    <modificações>
+    hg commit
+    <modificações>
+    hg commit
+    hg rollback
+
+Quando você estiver pronto para colocar seu histórico em um repositório central, 
+crie este novo repositório -- por exemplo, através da interface administrativa 
+do BitBucket -- e faça o push do seu histórico para lá::
+
+    hg push https://bitbucket.org/simplesconsultoria/sc.base.example
+
+A partir realize as transações de pull, update, merge e commit normalmente.
+
+.. warning::
+    Seguindo estes passos, ao realizar um **hg push** sem especificar o caminho 
+    o Mercurial reclamará informando que você não tem um repositório padrão para 
+    push definido. Para resolver isto, edite o arquivo **hgrc** (ou o crie) 
+    dentro da pasta **.hg** na raiz do repositório local e adicione a seção 
+    [paths] e abaixo dela o atalho **default-push = <caminho-para-repositorio>**
+    .
 
