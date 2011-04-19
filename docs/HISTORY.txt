@@ -4,6 +4,8 @@ Changelog
 20110225.2 (unreleased)
 -----------------------
 
+* Added setuptools_hg to dependencies [erico_andrei]
+
 * Added Mercurial reference [erico_andrei]
 
 * Improved basic environment and configuration docs [erico_andrei]
