@@ -266,6 +266,8 @@ Crie sua conta em https://bitbucket.org/account/signup/ e requisite a alguém de
 nossa equipe de infra a permissão para acesso aos repositórios. Não esqueça de 
 informar qual o seu username.
 
+.. _conta_ploneorg:
+
 Plone.org
 ----------
 
@@ -306,6 +308,8 @@ e a sua categorização como **commitaccess**.
 Informe neste ticket que você deseja acesso ao Collective e que você trabalha na 
 Simples Consultoria e que ajudará na manutenção de produtos existentes neste 
 repositório.
+
+.. _conta_pypi:
 
 PyPi
 --------
