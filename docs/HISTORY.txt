@@ -1,8 +1,12 @@
 Changelog
 =========
 
-20110225.2 (unreleased)
+20110225.2 (2011-04-19)
 -----------------------
+
+* Using zest.releaser 3.21 [erico_andrei]
+
+* Improve documentation related to package releases [erico_andrei]
 
 * Added setuptools_hg to dependencies [erico_andrei]
 
