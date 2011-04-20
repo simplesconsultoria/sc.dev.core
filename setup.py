@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '20110225.2dev'
+version = '20110225.2'
 
 setup(name='sc.dev.core',
       version=version,
@@ -31,7 +31,7 @@ setup(name='sc.dev.core',
           'setuptools-git==0.3.4',
           'setuptools_hg==0.2',
           'collective.dist==0.2.5',
-          'zest.releaser==3.20',
+          'zest.releaser==3.21',
           'collective.dist==0.2.5',
           'Sphinx==1.0.4',
           'rst2pdf==0.16',
