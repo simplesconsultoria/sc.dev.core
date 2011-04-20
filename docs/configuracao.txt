@@ -144,6 +144,43 @@ pasta de seu usuário.
 Um exemplo de configuração é a inclusão do auto-complete, que pode ser realizada 
 editando o arquivo **.pythonrc.py** para conter o código abaixo:
 ::
+    
     import rlcompleter, readline
     readline.parse_and_bind('tab: complete')
+
+Configurações para Buildout
+===========================
+
+Como boa parte de nosso trabalho é realizado com buildouts, é sugerida a 
+criação de configurações padrão para o seu ambiente.
+
+Na raiz de sua pasta de usuário, crie uma nova pasta com o nome de 
+**.buildout**:
+::
+
+    mkdir ~/.buildout
+
+Dentro desta pasta adicione um arquivo **default.cfg** com as configurações de 
+cache para downloads:
+::
+    
+    [buildout]
+    zope-directory= /home/<meu_user>/cache/zope 
+    download-cache= /home/<meu_user>/cache/download 
+    eggs-directory= /home/<meu_user>/cache/eggs
+    extends-cache = /home/<meu_user>/cache/extends
+
+.. warning:: Substitua <meu_user> pelo nome de seu usuário [Linux, Mac]
+
+Antes de rodar um novo buildout você deve criar as pastas para a realização 
+do cache:
+::
+
+    mkdir -p /home/<meu_user>/cache/{zope,download,eggs,extends}
+
+A próxima vez que um buildout for executado nesta máquina, os arquivos serão 
+baixados nas pastas de cache -- evitando assim duplicidades.
+
+.. note:: Caso deseje, é possível não usar estas configurações, ao passar a 
+          opção **-U**
 
