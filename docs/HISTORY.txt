@@ -1,7 +1,7 @@
 Changelog
 =========
 
-20110420.2 (unreleased)
+20110530.1 (2011-05-30)
 -----------------------
 
 * Update sc.paster.theme, sc.paster.package and sc.paster.buildout [erico_andrei]
