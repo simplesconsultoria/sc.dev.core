@@ -5,14 +5,14 @@ Trabalhando com pacotes
 Modelos de pacotes
 ====================
 
-Como maneira de agilizar o trabalho de criação de novos pacotes Python a 
+Como maneira de agilizar o trabalho de criação de novos pacotes Python a
 comunidade desenvolveu ferramentas de templates (skeletons). A mais famosa delas
-é o `PasteScript <http://pypi.python.org/pypi/PasteScript/>`_
+é o `PasteScript <http://pypi.python.org/pypi/PasteScript/>`_.
 
 ZopeSkel
 --------
 
-A partir desta ferramenta a comunidade Zope/Plone criou o projeto `ZopeSkel <http://pypi.python.org/pypi/ZopeSkel/>`_ que contempla alguns modelos de 
+A partir desta ferramenta a comunidade Zope/Plone criou o projeto `ZopeSkel <http://pypi.python.org/pypi/ZopeSkel/>`_ que contempla alguns modelos de
 criação de pacotes
 
 +-----------------------------------------------------------------------------+
@@ -36,9 +36,9 @@ criação de pacotes
 +===================+=========================================================+
 |  plone2_theme     | Tema para Plone 2.1                                     |
 +-------------------+---------------------------------------------------------+
-|  plone2.5_theme:  | Tema para Plone 2.5                                     |
+|  plone2.5_theme   | Tema para Plone 2.5                                     |
 +-------------------+---------------------------------------------------------+
-|  plone3_theme:    | Tema para Plone 3                                       |
+|  plone3_theme     | Tema para Plone 3                                       |
 +-------------------+---------------------------------------------------------+
 
 +-----------------------------------------------------------------------------+
@@ -75,42 +75,42 @@ criação de pacotes
 Usando os modelos
 =================
 
-A utilização dos modelos, tanto os específicos da Simples Consultoria como os 
-existentes via ZopeSkel, é feita através do comando **paster**. Este comando 
-deve estar no path do seu sistema operacional após a ativação do virtualenv que 
+A utilização dos modelos, tanto os específicos da Simples Consultoria como os
+existentes via ZopeSkel, é feita através do comando **paster**. Este comando
+deve estar no path do seu sistema operacional após a ativação do virtualenv que
 contém o **sc.dev.core**.
 
-O uso, para criação de um projeto/pacote a partir de um modelo existente, é 
-feito com o subcomando *create* e a opção *-t*, que indica qual template será utilizado 
+O uso, para criação de um projeto/pacote a partir de um modelo existente, é
+feito com o subcomando *create* e a opção *-t*, que indica qual template será utilizado
 ::
 
     paster create -t <nome-do-template> <caminho>
-    
-Ou seja, para criarmos um buildout para Plone 3 na pasta projetos/clienteA 
+
+Ou seja, para criarmos um buildout para Plone 3 na pasta projetos/clienteA
 abaixo da pasta de usuário:
 ::
-    
+
     $ cd ~/
     $ mkdir -p projetos/clienteA/
     $ paster create -t plone3_buildout buildout
 
-Ao executarmos este template, recebemos uma mensagem dizendo que o método 
-preferencial de instalação do Plone a partir da versão 3.1 é utilizar o 
+Ao executarmos este template, recebemos uma mensagem dizendo que o método
+preferencial de instalação do Plone a partir da versão 3.1 é utilizar o
 instalador disponível para cada plataforma. Esta mensagem pode ser ignorada.
 
 ::
 
     Selected and implied templates:
       ZopeSkel#plone3_buildout  A buildout for Plone 3 installation
-    
+
     Variables:
       egg:      buildout
       package:  buildout
       project:  buildout
-     
+
     **************************************************************************
     **   *** NOTE: You probably don't want to use this template!
-    
+
     **  Since Plone 3.1, the preferred way to get a buildout-based setup
     **  for Plone is to use the standard installer for your operating
     **  system (the Windows installer, the Mac installer, or the Unified
@@ -119,7 +119,7 @@ instalador disponível para cada plataforma. Esta mensagem pode ser ignorada.
     **  buildout. This template is here for older versions of Plone and
     **  for experts who explicitly want a raw, non-installer-based
     **  installation.
-    
+
     **  (This message is particularly aimed at people following out-of-
     **  date books/documentation that suggest this is the right way to get
     **  a Plone-based buildout. This is no longer the case.)
@@ -127,34 +127,34 @@ instalador disponível para cada plataforma. Esta mensagem pode ser ignorada.
 
 
 
-Logo em seguida temos uma pergunta sobre qual o modo do assistente será 
+Logo em seguida temos uma pergunta sobre qual o modo do assistente será
 utilizado: easy, expert ou all.
 
-Enquanto o primeiro modo assume diversos valores padrão, o modo all permite 
+Enquanto o primeiro modo assume diversos valores padrão, o modo all permite
 uma configuração muito mais detalhada.
 ::
 
     Expert Mode? (What question mode would you like? (easy/expert/all)?) ['easy']:
-    
-.. note:: Como regra geral utilize o modo all ou configure valores padrão que 
+
+.. note:: Como regra geral utilize o modo all ou configure valores padrão que
           sejam adequados para o nosso ambiente.
 
 Modelos da Simples Consultoria
 ==================================
 
-Em adição aos modelos existentes no **ZopeSkel**, a Simples Consultoria 
+Em adição aos modelos existentes no **ZopeSkel**, a Simples Consultoria
 implementou novos modelos com base em nossa experiência com projetos Plone.
 
-Seu uso é similar ao de qualquer outro modelo existente no ZopeSkel. 
+Seu uso é similar ao de qualquer outro modelo existente no ZopeSkel.
 ::
 
     $ paste create -t <nome-do-template> caminho
 
-A diferença está no produto gerado que será aderente às práticas e modelos da 
+A diferença está no produto gerado que será aderente às práticas e modelos da
 Simples Consultoria.
 
-Foram criados pacotes especializados para cada novo template e estes pacotes 
-são dependências do **sc.dev.core**, portanto ao instalar a última versão do 
+Foram criados pacotes especializados para cada novo template e estes pacotes
+são dependências do **sc.dev.core**, portanto ao instalar a última versão do
 **sc.dev.core** são instaladas as últimas versões destes templates.
 
 sc.paster.buildout
@@ -166,34 +166,34 @@ sc.paster.buildout
 | portal_buildout   | Buildout para projetos Plone                            |
 +-------------------+---------------------------------------------------------+
 
-Cria buildout para Plone 3.x e 4.x já incluindo configurações de blob storage e 
+Cria buildout para Plone 3.x e 4.x já incluindo configurações de blob storage e
 arquivos de configuração especializados.
 
 base.cfg
-    Configuração base para todos os ambientes. Deve contar com a versão correta 
+    Configuração base para todos os ambientes. Deve contar com a versão correta
     do Plone e carregar produto de policy para o projeto.
 
 desenvolvimento.cfg
-    Usado durante o processo de desenvolvimento, configura log verboso, modo de 
-    debug e segurança detalhada (implementação em Python). Esta configuração 
-    inclui pacotes para desenvolvimento, como o Products.PDBMode, 
-    Products.Gloworm e Products.PrintingMailHost. Nesta configuração incluimos 
+    Usado durante o processo de desenvolvimento, configura log verboso, modo de
+    debug e segurança detalhada (implementação em Python). Esta configuração
+    inclui pacotes para desenvolvimento, como o Products.PDBMode,
+    Products.Gloworm e Products.PrintingMailHost. Nesta configuração incluimos
     o uso do Mr.Developer e seu objetivo é focar na **flexibilidade**
 
-homloga.cfg
-    Configuração para ambiente de homologação pelo cliente. Apesar de também 
-    utilizar código direto de um *vcs*, este arquivo elimina pacotes de 
+homologa.cfg
+    Configuração para ambiente de homologação pelo cliente. Apesar de também
+    utilizar código direto de um *vcs*, este arquivo elimina pacotes de
     desenvolvimento e deve presar pela **estabilidade**.
 
 producao.cfg
-    Configuração para uso em ambiente de produção. Esta configuração não deve 
-    apontar para nenhum produto/pacote proveniente de um *vcs* e deve ser 
+    Configuração para uso em ambiente de produção. Esta configuração não deve
+    apontar para nenhum produto/pacote proveniente de um *vcs* e deve ser
     focada em **performance**.
 
 sources.cfg
-    Com o uso do Mr.Developer este arquivo deve conter a listagem de TODOS os 
-    pacotes que estão em desenvolvimento -- ou que são utilizados a partir de 
-    um *vcs*. Estes pacotes estão listados, um por linha, abaixo da seção 
+    Com o uso do Mr.Developer este arquivo deve conter a listagem de TODOS os
+    pacotes que estão em desenvolvimento -- ou que são utilizados a partir de
+    um *vcs*. Estes pacotes estão listados, um por linha, abaixo da seção
     *sources*.
 
 sc.paster.package
@@ -205,28 +205,28 @@ sc.paster.package
 |  portal_package   | Package usado em projetos Plone                         |
 +-------------------+---------------------------------------------------------+
 
-Este template é utilizado para a criação de pacotes Python com 3 níveis -- 
-sendo 2 de namespaces e 1 do pacote propriamente dito -- para uso em projetos 
+Este template é utilizado para a criação de pacotes Python com 3 níveis --
+sendo 2 de namespaces e 1 do pacote propriamente dito -- para uso em projetos
 Plone.
 
 Os pacotes gerados por este template já incluem um profile padrão -- default
--- mecanismo para upgrades, utilizando Generic Setup, e configurações de 
+--, um mecanismo para upgrades, utilizando Generic Setup, e configurações de
 dependências.
 
-O padrão de nomes utilizado na Simples Consultoria para este tipo de pacote 
+O padrão de nomes utilizado na Simples Consultoria para este tipo de pacote
 segue a linha *sc.cliente.projeto*, onde:
 
 sc
-    Define que este pacote foi desenvolvido pela Simples Consultoria para 
+    Define que este pacote foi desenvolvido pela Simples Consultoria para
     um de seus projetos ou clientes.
 
 cliente
-    Nome do cliente sendo atendido. Caso seja um pacote genérico -- produto 
-    utilizado pela Simples Consultoria em diversos projetos e/ou clientes 
+    Nome do cliente sendo atendido. Caso seja um pacote genérico -- produto
+    utilizado pela Simples Consultoria em diversos projetos e/ou clientes
     este namespace deve conter a linha do produto. ex: dev, social, base.
 
 projeto
-    Projeto atendido por este pacote. Caso o projeto tenha diversos pacotes 
+    Projeto atendido por este pacote. Caso o projeto tenha diversos pacotes
     este nome deve explicitar qual a funcionalidade implementada.
 
 .. note:: Saiba mais sobre o padrão de nomes da Simples Consultoria na seção
@@ -241,43 +241,69 @@ sc.paster.policy
 |  portal_policy    | Portal Policy para projetos Plone                       |
 +-------------------+---------------------------------------------------------+
 
-Template para a criação de pacotes com políticas para novos portais usando 
+Template para a criação de pacotes com políticas para novos portais usando
 Plone.
 
-Este template é utilizado em todos os projetos desenvolvidos pela Simples 
+Este template é utilizado em todos os projetos desenvolvidos pela Simples
 Consultoria para a configuração -- e gestão de dependências -- do projeto.
 
-O padrão de nomenclatura de pacotes criados com este template é similar ao 
-utilizado no portal_package apenas substituindo-se o nome do projeto pelo 
+O padrão de nomenclatura de pacotes criados com este template é similar ao
+utilizado no portal_package apenas substituindo-se o nome do projeto pelo
 termo **policy**. ex: *sc.cliente.policy*.
 
-Pacotes criados com este template possuem código para controle de 
+Pacotes criados com este template possuem código para controle de
 dependências e upgrades.
 
-Todas as dependências são listadas em três arquivos: setup.py, config.py e 
-dependencies.zcml.
+Todas as dependências são listadas em quatro arquivos: setup.py, config.py,
+dependencies.zcml e to01.py.
 
-A inclusão de uma dependência dentro do arquivo setup.py objetiva sua 
-inclusão automática pelo mecanismo de distutils. As dependências declaradas 
-neste arquivo são listadas na seção **install_requires** e devem seguir 
-o padrão::
+setup.py
+    A inclusão de uma dependência dentro do arquivo setup.py objetiva sua
+    inclusão automática pelo mecanismo de distutils. As dependências declaradas
+    neste arquivo são listadas na seção **install_requires** e devem seguir
+    o padrão::
 
-      install_requires=[
-          # -*- Extra requirements: -*-
-          'sc.paster.package==0.5.3',
-      ],
+          install_requires=[
+              # -*- Extra requirements: -*-
+              'sc.paster.package==0.5.3',
+          ],
 
-No exemplo acima a dependência a ser instalada é o *sc.paster.package* na
-versão 0.5.3. Caso seja necessário especificar um limite superior para a 
-versão da dependência a ser utilizada deve-se substituir o comparador 
-**==** por **<=**. No cenário de ser necessário um limite inferior -- versão
-mínima -- o comparador será **>=**.
+    No exemplo acima a dependência a ser instalada é o *sc.paster.package* na
+    versão 0.5.3. Caso seja necessário especificar um limite superior para a
+    versão da dependência a ser utilizada deve-se substituir o comparador
+    **==** por **<=**. No cenário de ser necessário um limite inferior -- versão
+    mínima -- o comparador será **>=**.
 
-Quando o pacote de política, criado por este template, for incluido em uma 
-configuração de buildout, as dependências listadas no setup.py serão 
-obtidas, automaticamente, quando da execução do buildout.
+    Quando o pacote de política, criado por este template, for incluído em uma
+    configuração de buildout, as dependências listadas no setup.py serão
+    obtidas, automaticamente, quando da execução do buildout.
 
- 
+config.py
+    O arquivo config.py funciona como um painel de controle cujos interruptores
+    representam o comportamento de instalação para cada dependência do site. É
+    possível configurar, por produto, a automatização de sua instalação, a
+    execução de seus possíveis perfis de Generic Setup, bem como a trava e/ou
+    ocultamento de sua opção de instalação nas interfaces do Zope e do Plone.
+
+dependencies.zcml
+    O arquivo dependencies.zcml reúne os includes ZCML necessários para cada
+    dependência que depender da arquitetura de componentes do Zope 3 (ZCA).
+    Este arquivo é por sua vez incluído pelo configure.zcml, no mesmo diretório.
+
+to01.py
+    Por fim, é necessário adicionar as dependências no upgrade step inicial do
+    produto de políticas, isto é, da versão 0 para a versão 1. Tal upgrade
+    step é definido no arquivo configure.zcml do subpacote upgrades, onde você
+    poderá declarar novos upgrade steps conforme novas versões do produto de
+    políticas sejam lançadas. Para começar, basta informar quais produtos
+    devem ser instalados durante a primeira instalação do produto de políticas
+    em um site Plone.
+
+    .. warning::
+        Devido à adoção da política de upgrade steps, a opção de reinstalação do
+        produto por meio das interfaces do Zope e do Plone não reinstalará as
+        dependências -- a não ser que explicitamente definido em um novo
+        handler.
 
 sc.paster.theme
 ----------------
@@ -285,17 +311,18 @@ sc.paster.theme
 +-----------------------------------------------------------------------------+
 | Temas para Plone                                                            |
 +===================+=========================================================+
-|  portal_theme     | Tema visual para projetos Plone                         |
+|  portal_theme     | Tema visual para projetos Plone 3                       |
+|  portal_theme4    | Tema visual para projetos Plone 4                       |
 +-------------------+---------------------------------------------------------+
 
-Template para a criação de temas para novos portais usando Plone.
+Templates para a criação de temas para novos portais usando Plone.
 
-Este template é utilizado na maioria dos projetos desenvolvidos pela Simples 
-Consultoria para a alteração do layout e design do portal.
+Estes templates são utilizados na maioria dos projetos desenvolvidos pela
+Simples Consultoria para a alteração do layout e design do portal.
 
-O padrão de nomenclatura de pacotes criados com este template é similar ao 
-utilizado no portal_package apenas substituindo-se o namespace **sc** pelo 
-namespace **beyondskins**, que agrupa os temas criados pela Simples Consultoria 
-ex: *beyondskins.cliente.projeto*.
+O padrão de nomenclatura de pacotes criados com estes templates é similar ao
+utilizado no portal_package e portal_policy, apenas substituindo-se o namespace
+**sc** pelo namespace **beyondskins**, que agrupa os temas criados pela Simples
+Consultoria
 
-
+Ex: *beyondskins.cliente.projeto*.
