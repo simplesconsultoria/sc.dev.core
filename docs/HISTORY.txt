@@ -4,7 +4,7 @@ Changelog
 20110530.2 (unreleased)
 -----------------------
 
-- Nothing changed yet.
+- Improved documentation related to policy products and some shortcuts [davilima6]
 
 
 20110530.1 (2011-05-30)
