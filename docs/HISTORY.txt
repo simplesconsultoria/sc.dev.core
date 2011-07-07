@@ -1,8 +1,8 @@
 Changelog
 =========
 
-20110530.2 (unreleased)
------------------------
+20110707.01 (2011-07-07)
+------------------------
 
 * Added an entry point to upload this doc to packages.python.org [erico_andrei]
 
