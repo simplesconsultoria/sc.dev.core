@@ -40,6 +40,6 @@ setup(name='sc.dev.core',
       ],
       entry_points={
           'zest.releaser.releaser.after':
-              'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'},
-      """,
+              'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'
+          },
       )
