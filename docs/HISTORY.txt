@@ -4,7 +4,13 @@ Changelog
 20110530.2 (unreleased)
 -----------------------
 
-- Improved documentation related to policy products and some shortcuts [davilima6]
+* Added an entry point to upload this doc to packages.python.org [erico_andrei]
+
+* Added Sphinx-PyPI-upload as dependency [erico_andrei]
+
+* New version of sc.paster.package [erico_andrei]
+
+* Improved documentation related to policy products and some shortcuts [davilima6]
 
 
 20110530.1 (2011-05-30)
