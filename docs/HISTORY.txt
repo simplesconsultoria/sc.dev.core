@@ -1,7 +1,7 @@
 Changelog
 =========
 
-20110707.2 (unreleased)
+20110707.2 (2011-07-07)
 -----------------------
 
 * Fix entry point [erico_andrei]
