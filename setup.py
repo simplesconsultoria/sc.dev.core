@@ -24,20 +24,22 @@ setup(name='sc.dev.core',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'sc.paster.package==0.7.1',
+          'sc.paster.package==0.8',
           'sc.paster.buildout==0.7.1',
           'sc.paster.policy==0.7',
           'sc.paster.theme==0.8',
           'setuptools-git==0.3.4',
           'setuptools_hg==0.2',
           'collective.dist==0.2.5',
-          'zest.releaser==3.21',
+          'zest.releaser==3.22',
           'collective.dist==0.2.5',
           'Sphinx==1.0.4',
           'rst2pdf==0.16',
           'i18ndude==3.2.2',
+          'Sphinx-PyPI-upload==0.2.1'
       ],
-      entry_points="""
-      # -*- Entry points: -*-
+      entry_points={
+          'zest.releaser.releaser.after':
+              'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'},
       """,
       )
