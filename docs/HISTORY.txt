@@ -1,10 +1,10 @@
 Changelog
 =========
 
-20110707.3 (unreleased)
+20110707.3 (2011-07-07)
 -----------------------
 
-- Nothing changed yet.
+* Fix entry point (again...) [erico_andrei]
 
 
 20110707.2 (2011-07-07)
