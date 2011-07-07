@@ -19,9 +19,9 @@ def upload(context):
         return
     # build documentation
     shell_command = utils.setup_py(build_command)
-    result = utils.system(shell_command)
+    result = zest.releaser.utils.system(shell_command)
     
     # upload documentation
     shell_command = utils.setup_py(upload_command)
-    result = utils.system(shell_command)
+    result = zest.releaser.utils.system(shell_command)
     
