@@ -4,7 +4,7 @@ Changelog
 20110707.2 (unreleased)
 -----------------------
 
-- Nothing changed yet.
+* Fix entry point [erico_andrei]
 
 
 20110707.01 (2011-07-07)

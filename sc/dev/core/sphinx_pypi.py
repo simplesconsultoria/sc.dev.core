@@ -9,7 +9,7 @@ SECTION = 'build_sphinx'
 def upload(context):
     ''' Upload sphinx doc'''
     config = ConfigParser.ConfigParser()
-    config.read(os.path.join(context['working_dir'], 'setup.cfg'))
+    config.read(os.path.join(context['workingdir'], 'setup.cfg'))
     if SECTION not in config.sections():
         return None
     
