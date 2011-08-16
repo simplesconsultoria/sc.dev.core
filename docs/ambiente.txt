@@ -75,7 +75,7 @@ Instalação de pacotes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
-    apt-get install build-essential subversion python python-dev python-setuptools libjpeg62-dev libzzip-dev zlib1g-dev lynx
+    sudo apt-get install build-essential bzip2 gzip libbz2-dev libjpeg62-dev libncurses5-dev libpcre3-dev libreadline5-dev libssl-dev libxml2-dev libxslt1-dev lynx mercurial git-core poppler-utils python-setuptools python2.6-dev subversion vim wv zlib1g-dev
 
 Python
 ------
@@ -115,7 +115,8 @@ que não serão necessárias
 Usando o Python instalado no sistema -- última vez que o usaremos :-) -- 
 executamos o buildout para compilar os interpretadores.
 ::
-
+    
+    cd ~/python/
     python bootstrap.py
     ./bin/buildout
 
@@ -140,14 +141,14 @@ do intepretador do sistema.
 A criação de novos ambientes Python é simples:
 ::
     
-    ~/python/bin/virtual-env-2.4 --no-site-packages py24
+    ~/python/bin/virtual-env-2.4 py24
     
 Cria um novo ambiente com Python 2.4 na pasta py24.
 
 Para usar Python 2.6, execute o comando:
 ::
 
-    ~/python/bin/virtual-env-2.6 --no-site-packages py26
+    ~/python/bin/virtual-env-2.6 py26
 
 Que criará uma pasta py26 com o novo ambiente.
 
@@ -250,11 +251,16 @@ contas em alguns serviços externos.
 BitBucket
     Provedor de soluções Mercurial. Onde hospedamos nossos repositórios
 
+GitHub
+    Provedor de soluções Git. Hospedamos pacotes públicos e interagimos com a comunidade Plone
+
 Plone.org
     Portal da comunidade Plone e local dos repositórios de código do produto.
 
 PyPi
     Repositório de pacotes Python. Local onde publicamos nossas contribuições à comunidade.
+
+.. _conta_bitbucket:
 
 BitBucket
 ----------
@@ -265,6 +271,22 @@ e para acessá-los é necessária a criação de uma conta no serviço.
 Crie sua conta em https://bitbucket.org/account/signup/ e requisite a alguém de 
 nossa equipe de infra a permissão para acesso aos repositórios. Não esqueça de 
 informar qual o seu username.
+
+.. _conta_github:
+
+GitHub
+----------
+
+Com a escolha da comunidade Plone em mover seu desenvolvimento para o git e o 
+GitHub, tornou-se necessária a criação de uma conta também neste serviço.
+
+A Simples Consultoria disponibilizará todos os seus pacotes públicos sob a 
+url de sua organização em https://github.com/organizations/simplesconsultoria e
+também sob o Collective https://github.com/organizations/collective
+
+Crie sua conta em https://github.com/signup/free e requisite a alguém de 
+nossa equipe de infra para ser cadastrado em nossa `organização 
+<https://github.com/organizations/simplesconsultoria>`_
 
 .. _conta_ploneorg:
 
@@ -294,7 +316,7 @@ Archetypes (https://svn.plone.org/svn/archetypes)
     Componentes relacionados ao framework Archetypes.
 
 Collective (https://svn.plone.org/svn/collective)
-    Componentes de terceiros. Local onde boa parte dos add-ons do Plone é mantido.
+    Componentes de terceiros. Local onde boa parte dos add-ons do Plone é mantido. (Atualmente em fase de migração para o GitHub)
 
 O acesso ao primeiro repositório é restrito ao preenchimento de um documento, 
 o `Contributors Agreement <http://plone.org/foundation/contributors-agreement/agreement.pdf/view>`_,
