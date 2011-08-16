@@ -4,7 +4,7 @@ Changelog
 20110707.4 (unreleased)
 -----------------------
 
-- Nothing changed yet.
+* Update documentation on Git, Mercurial, SVN [erico_andrei]
 
 
 20110707.3 (2011-07-07)

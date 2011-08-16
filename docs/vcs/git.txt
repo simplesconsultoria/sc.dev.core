@@ -1,0 +1,266 @@
+*********************
+Git (git)
+*********************
+
+Introduções
+======================
+
+O Git é um sistema de controle de versões desenvolvido, entre outras pessoas, 
+por Linus Torvalds para a gestão do código fonte do Linux.
+
+Assim como o Mercurial, o Git é baseado em uma estrutura de repositórios 
+distribuídos, ou seja, não existe a dependência de que o repositório central 
+esteja acessível para que transações de versionamento ocorram.
+
+Para alcançar esta descentralização o Git implementa repositórios locais
+que contém todo o histórico dos dados que ele versiona. Para quem está
+acostumado com o modus-operandi do Subversion, seria como se cada checkout se
+tornasse um repositório local contendo histórico de todas as transações
+anteriores e permitindo ao usuário a realização de commits, reverts, etc,
+localmente, sendo que este novo histórico de transações pode ser integrado ao
+repositório original a qualquer momento.
+
+O objetivo deste texto é apresentar rapidamente o Git e apontar para
+recursos nas interwebs onde seja possível se aprofundar no assunto.
+
+É importante reforçar que, na Simples Consultoria, o Mercurial é o padrão para
+controle de versões dos projetos a partir de abril de 2011. Projetos antigos em
+Subversion (https://simplesnet.com.br/svn/) serão gradualmente migrados para o
+Bitbucket (https://bitbucket.org).
+
+Pacotes e projetos desenvolvidos pela Simples Consultoria para uso da 
+comunidade são mantidos no `Github <http://github.com>`_.
+
+.. warning::
+    Projetos/Pacotes hospedados em repositórios do Plone ou do Zope, continuam
+    sendo mantidos com Subversion. Alguns projetos de clientes ainda usarão Git.
+
+
+Instalando
+======================
+
+Caminho fácil
+--------------
+
+O jeito fácil e rápido de começar a trabalhar com o Git é através do uso
+de uma ferramenta com interface gráfica. 
+
+Escolha a melhor ferramenta a partir do site do `Git 
+<https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools`_
+
+Configurações Básicas
+=======================
+
+Após a instalação é recomendável passar pelo processo de configuração do
+seu ambiente Git.
+
+Geralmente as configurações são armazenadas em um arquivo **.gitconfig** na raiz
+de sua pasta de usuário.
+
+.. warning::
+    Em sistemas operacionais como Linux e MacOS, este arquivo -- por ter seu
+    nome iniciando com um **.** -- é oculto por padrão.
+
+Edite este arquivo com seu editor de preferência colocando, ao menos, as
+informações referentes a seu username, email e editor de texto de preferência::
+
+    [user]
+    name = Douglas Adams
+    email = dontpanic@simplesconsultoria.com.br
+    
+    [core]
+    editor = vim
+
+Como exemplos de valores para a configuração de **editor**
+
+    * Windows: **Notepad** ou **'C:/Program Files/Notepad++/notepad++.exe'
+      -multiInst -notabbar -nosession -noPlugin**
+
+    * MacOS: **mate -w**
+
+    * Linux: **gvim --nofork** ou **vim**
+
+Colocando rodinhas
+-------------------
+
+Ainda editando o **.gitconfig**, é possível a criação de atalhos para o uso do
+Git. 
+
+Alguns exemplos seriam ::
+
+    [alias]
+        st = status
+        ci = commit
+        br = branch
+        co = checkout
+
+
+Neste caso, criamos alguns aliases para facilitar tarefas rotineiras com o git. 
+Para usuá-las, é só substituir o comando original pelo alias:
+::
+
+    git st
+    git co foo.py
+
+
+Git 101
+===================
+
+.. note::
+    Em vários momentos faremos alusões ao uso do Subversion, que podem ser
+    diligentemente ignoradas se você não tiver trabalhado com este sistema
+    durante os últimos anos.
+
+Vamos apresentar o uso do Git com base em dois cenários de partida.
+
+O primeiro é similar ao modelo Subversion, com um repositório central que será
+a base e referência para o trabalho.
+
+O cenário alternativo parte de um diretório local, que será convertido em
+repositório e que posteriormente pode ser colocado em um repositório central.
+
+Antes de apresentarmos os cenários, vamos listar alguns dos comandos usuais.
+
+Lista de comandos
+-------------------
+
+========== ==========================================================
+Comando     Descrição
+========== ==========================================================
+init        Cria e inicializa repositório local
+add         Adiona arquivos/diretórios a um repositório
+remove      Remove conteúdo do repositório ou da cópia de trabalho
+blame       Mostra que autor e que revisão alteraram cada linha de 
+            um arquivo
+checkout    Atualiza os arquivos da revisão local para a versão do 
+            index ou de uma árvore especificada.
+clone       Clona localmente um repositório remoto
+commit      Efetiva e documenta alterações
+diff        Exibe diferenças no repositório ou em arquivos listados
+log         Exibe histórico
+status      Exibe alterações dos conteúdos no repositório local
+pull        Sincroniza com outro repositório
+update      Atualiza a revisão local para a revisão do repositório
+            principal
+push        Publica modificações locais para outro repositório
+merge       Realiza o merge com uma revisão específica
+========== ==========================================================
+
+Cenário: Repositório Central
+------------------------------
+
+Como no modelo centralizado do Subversion, vamos "baixar", inicialmente, os
+dados a partir de um repositório.
+
+Para tanto, o comando a ser utilizado será::
+
+    git clone git@github.com:simplesconsultoria/collective.behavior.contactinfo.git
+
+Isto criará um **repositório local** chamado collective.behavior.contactinfo 
+na pasta atual.
+Assim como no Subversion é possível dar um nome arbitrário a cópia local dos
+dados::
+
+    git clone git@github.com:simplesconsultoria/collective.behavior.contactinfo.git cbc
+    
+
+Criará o repositório local com o nome de **cbc** na pasta atual.
+
+A diferença aqui é que não temos apenas uma **cópia de trabalho** do repositório
+central e sim um **repositório local**, que contém todo o histórico do
+repositório central -- até o momento de sua clonagem -- e que suporta a
+realização de novas transações e a criação de seu histórico.
+
+Por exemplo, após alterar o código do arquivo setup.py dentro de
+collective.behavior.contactinfo, é possível realizar um commit, da mesma 
+maneira que seria feito no Subversion::
+
+    git commit setup.py
+
+Gerando assim um novo REV, que é o número de revisão, e mantendo o histórico
+das versões anteriores -- possibilitando a volta a qualquer ponto arbitrário
+da história deste arquivo.
+
+A diferença em relação ao Subversion é que esta revisão está apenas no nosso
+repositório local, não afetando assim o histórico do repositório central.
+
+Este modelo distribuido permite, entre outras coisas, commits menores e mais
+constantes, possibilitando pequenas alterações caso necessário.
+
+Para que as alterações de nosso repositório local sejam replicadas no
+repositório central, realizamos o push de nosso histórico::
+
+    git push
+
+É importante que também nos mantenhamos atualizados com as alterações já
+enviadas por outros para o repositório central. Para tanto utilizamos o comando
+pull::
+
+    git pull
+
+Que sincroniza e aplica, as últimas alterações realizadas no repositório
+central.
+
+E para realizar o merge entre as alterações do repositório central e as suas,
+utilizamos o comando merge::
+
+    git merge
+
+Para resumir, o ciclo é::
+
+    git clone git@github.com:simplesconsultoria/collective.behavior.contactinfo.git
+     <modificações>
+     git commit
+     <modificações>
+     git commit
+     <envio para repositório central>
+     git push
+     <sincronização>
+     git pull
+     <realiza merge>
+     git merge
+
+Cenário: Repositório Local
+------------------------------
+
+Considere uma pasta local, que você deseja colocar sob controle de versão. Como
+exemplo vamos utilizar uma pasta, de produto recém criado pelo paster, chamada
+sc.base.example.
+
+Manteremos esta pasta sob versionamento local até o momento em que seja
+desejável termos contribuição externa, quando enviaremos nosso histórico para
+um repositório central.
+
+O primeiro passo é, dentro da pasta que desejamos versionar, crie um novo
+repositório digitando::
+
+    git init
+
+A partir deste momento a pasta sc.base.example é um repositório Git.
+
+Para cada arquivo ou diretório abaixo desta pasta, que você deseje manter sob
+controle de versão, é necessário realizar o comando **add** para adicioná-lo ao
+repositório. Este comando aceita coringas (wildcards) para facilitar seu uso.
+Veja alguns exemplos de uso::
+
+    git add MANIFEST.in
+    git add setup.*
+    git add sc/
+
+É possível realizar modificações, commitar e reverter alterações, como em um
+repositório -- ou mesmo sistema de versionamento -- qualquer::
+
+    <modificações>
+    git commit
+    <modificações>
+    git commit
+    git rollback
+
+Quando você estiver pronto para colocar seu histórico em um repositório central,
+crie este novo repositório -- por exemplo, através da interface administrativa
+do GitHub -- e faça o push do seu histórico para lá::
+
+    git remote add origin git@github.com:simplesconsultoria/sc.base.example
+    git push origin master
+
+A partir realize as transações de pull, update, merge e commit normalmente.
