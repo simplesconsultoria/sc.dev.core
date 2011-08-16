@@ -29,9 +29,13 @@ controle de versões dos projetos a partir de abril de 2011. Projetos antigos em
 Subversion (https://simplesnet.com.br/svn/) serão gradualmente migrados para o
 Bitbucket (https://bitbucket.org).
 
+Pacotes e projetos desenvolvidos pela Simples Consultoria para uso da 
+comunidade são mantidos no `Github <http://github.com>`_.
+
 .. warning::
     Projetos/Pacotes hospedados em repositórios do Plone ou do Zope, continuam
-    sendo mantidos com Subversion. Alguns projetos de clientes ainda usarão Git.
+    sendo mantidos com Subversion. Alguns projetos de clientes usarão Git e a 
+    comunidade Plone está migrando seus projetos para o GitHub.
 
 
 Instalando
@@ -100,6 +104,13 @@ ativada com a sua adição à seção [extensions] do arquivo de configuração:
 
     [extensions]
     mercurial_keyring =
+
+.. warning::
+    Caso o mercurial_keyring não esteja instalado, você deve fazê-lo manualmente 
+    através do easy_install (usando o **mesmo** Python utilizado pelo Mercurial) 
+    ou adicionando o caminho para o arquivo do mercurial_keyring nas 
+    configurações de extensions
+
 
 Outras melhorias
 -----------------
