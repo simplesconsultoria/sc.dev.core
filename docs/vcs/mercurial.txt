@@ -281,7 +281,7 @@ repositório. Este comando aceita coringas (wildcards) para facilitar seu uso.
 Veja alguns exemplos de uso::
 
     hg add MANIFEST.in
-    hg.add setup.*
+    hg add setup.*
     hg add sc/
 
 É possível realizar modificações, commitar e reverter alterações, como em um
