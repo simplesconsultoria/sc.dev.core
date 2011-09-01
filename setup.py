@@ -33,10 +33,11 @@ setup(name='sc.dev.core',
           'collective.dist==0.2.5',
           'zest.releaser==3.22',
           'collective.dist==0.2.5',
-          'Sphinx==1.0.4',
+          'Sphinx==1.0.7',
           'rst2pdf==0.16',
           'i18ndude==3.2.2',
-          'Sphinx-PyPI-upload==0.2.1'
+          'Sphinx-PyPI-upload==0.2.1',
+          'zopeskel.dexterity==1.3',
       ],
       entry_points={
           'zest.releaser.releaser.after':
