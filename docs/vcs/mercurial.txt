@@ -170,6 +170,7 @@ update      up         Atualiza a revisão local para a revisão do repositório
                        principal
 push                   Publica modificações locais para outro repositório
 merge                  Realiza o merge com uma revisão específica
+heads                  Exibe os branches abertos em um repositório
 ========== ========== ==========================================================
 
 Cenário: Repositório Central

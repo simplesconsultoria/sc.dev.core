@@ -45,8 +45,8 @@ Caminho fácil
 O jeito fácil e rápido de começar a trabalhar com o Git é através do uso
 de uma ferramenta com interface gráfica. 
 
-Escolha a melhor ferramenta a partir do site do `Git 
-<https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools`_
+Escolha a melhor ferramenta a partir do site do 
+`Git <https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools>`_
 
 Configurações Básicas
 =======================

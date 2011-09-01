@@ -1,26 +1,33 @@
+*********************
 Changelog
-=========
+*********************
 
 20110707.4 (unreleased)
------------------------
+=========================
 
-* Update documentation on Git, Mercurial, SVN [erico_andrei]
+* Update documentation on Git, Mercurial, SVN, Glossary [erico_andrei]
+
+* Created an editors chapter in the documentation [hvelarde]
+
+* Add zopeskel.dexterity as a dependency [erico_andrei]
+
+* Use Sphinx 1.0.7 [erico_andrei]
 
 
 20110707.3 (2011-07-07)
------------------------
+=========================
 
 * Fix entry point (again...) [erico_andrei]
 
 
 20110707.2 (2011-07-07)
------------------------
+=========================
 
 * Fix entry point [erico_andrei]
 
 
 20110707.01 (2011-07-07)
-------------------------
+=========================-
 
 * Added an entry point to upload this doc to packages.python.org [erico_andrei]
 
@@ -32,13 +39,13 @@ Changelog
 
 
 20110530.1 (2011-05-30)
------------------------
+=========================
 
 * Update sc.paster.theme, sc.paster.package and sc.paster.buildout [erico_andrei]
 
 
 20110420.1 (2011-04-20)
------------------------
+=========================
 
 * Using zest.releaser 3.21 [erico_andrei]
 
@@ -52,7 +59,7 @@ Changelog
 
 
 20110225.1 (2011-02-25)
------------------------
+=========================
 
 * Adding a basic portuguese documentation [erico_andrei]
 
@@ -60,13 +67,13 @@ Changelog
 
 
 20100908.02 (2010-09-08)
-------------------------
+=========================-
 
 * New versions, support for zest.releaser improved [erico_andrei]
 
 
 20100818.01 (2010-08-18)
-------------------------
+=========================-
 
 * Bump dependecies versions [erico_andrei]
 
@@ -76,18 +83,18 @@ Changelog
 
 
 20100809.01 (2010-08-09)
-------------------------
+=========================-
 
 * Bump sc.paster.theme version [erico_andrei]
 
 
 20100805.02 (2010-08-05)
-------------------------
+=========================-
 
 * Fixes unicode error [erico_andrei]
 
 
 20100805.01 (2010-08-05)
-------------------------
+=========================-
 
 - Initial release [erico_andrei]
