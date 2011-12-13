@@ -24,10 +24,10 @@ setup(name='sc.dev.core',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'sc.paster.package==0.8',
-          'sc.paster.buildout==0.7.1',
-          'sc.paster.policy==0.7',
-          'sc.paster.theme==0.8',
+#          'sc.paster.package==0.8',
+#          'sc.paster.buildout==0.7.1',
+#          'sc.paster.policy==0.7',
+#          'sc.paster.theme==0.8',
           'setuptools-git==0.3.4',
           'setuptools_hg==0.2',
           'collective.dist==0.2.5',
@@ -37,7 +37,7 @@ setup(name='sc.dev.core',
           'rst2pdf==0.16',
           'i18ndude==3.2.2',
           'Sphinx-PyPI-upload==0.2.1',
-          'zopeskel.dexterity==1.3',
+#          'zopeskel.dexterity==1.3',
       ],
       entry_points={
           'zest.releaser.releaser.after':
