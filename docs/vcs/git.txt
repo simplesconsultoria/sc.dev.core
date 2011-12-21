@@ -264,3 +264,65 @@ do GitHub -- e faça o push do seu histórico para lá::
     git push origin master
 
 A partir realize as transações de pull, update, merge e commit normalmente.
+
+Git 201
+===================
+
+Migrando de um Subversion
+----------------------------------------
+
+    * https://github.com/nirvdrum/svn2git
+
+Migrando de um Repositório Mercurial
+----------------------------------------
+
+Na raiz de seu diretório pessoal -- ou onde você acreditar ser mais adequado --
+realize o clone do utilitário fast-export:
+::
+    
+    cd ~
+    git clone git://repo.or.cz/fast-export.git
+
+
+.. note:: Este utilitário deve ter acesso ao mesmo python que o seu
+          Mercurial (hg)
+
+Agora faremos o clone do repositório Mercurial a ser migrado:
+::
+
+    cd ~
+    hg clone https://bitbucket.org/simplesconsultoria/sc.base.example
+    cd sc.base.example
+
+Criaremos um repositório Git local e o inicializaremos:
+::
+    
+    git init .
+
+Agora realizaremos o fast-export do histórico do Mercurial para o Git:
+::
+
+    cd ~/sc.base.example
+    ../fast-export/hg-fast-export.sh -r ./
+
+É provável que você tenha um repositório Git acusando vários arquivos apagados,
+então tudo o que temos a fazer é garantir que queremos o repositório Git no
+mesmo estado da última transação do repositório Mercurial:
+::
+    
+    git reset HEAD
+
+Caso queira enviar este repositório para um servidor central, como o GitHub:
+::
+
+    git remote add origin git@github.com:simplesconsultoria/sc.base.example
+    git push origin master
+
+E pronto, seu repositório foi migrado.
+
+Preparando um commit (como um profissional)
+--------------------------------------------
+
+::
+    
+    git add -p file.py
