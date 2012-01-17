@@ -41,6 +41,15 @@ setup(name='sc.dev.core',
 #          'zopeskel.dexterity==1.3',
       ],
       entry_points={
+          'console_scripts': [
+              'release = zest.releaser.release:main',
+              'prerelease = zest.releaser.prerelease:main',
+              'postrelease = zest.releaser.postrelease:main',
+              'fullrelease = zest.releaser.fullrelease:main',
+              'longtest = zest.releaser.longtest:main',
+              'lasttagdiff = zest.releaser.lasttagdiff:main',
+              'lasttaglog = zest.releaser.lasttaglog:main',
+              ],
           'zest.releaser.releaser.after':
               'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'
           },
