@@ -48,6 +48,10 @@ setup(name='sc.dev.core',
               'longtest = zest.releaser.longtest:main',
               'lasttagdiff = zest.releaser.lasttagdiff:main',
               'lasttaglog = zest.releaser.lasttaglog:main',
+              'sphinx-apidoc = sphinx.apidoc:main',
+              'sphinx-build = sphinx:main',
+              'sphinx-quickstart = sphinx.quickstart:main',
+              'sphinx-autogen = sphinx.ext.autosummary.generate:main',
               ],
           'zest.releaser.releaser.after':
               'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'
