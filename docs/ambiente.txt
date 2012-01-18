@@ -89,14 +89,14 @@ vários interpretadores sejam criados e configurados conforme a necessidade do
 desenvolvedor.
 
 O primeiro passo é baixar este buildout, na raiz da pasta do usuário, 
-diretamente do svn.plone.org:
+diretamente do github.com/collective/:
 ::
     
     cd ~/
-    svn co https://svn.plone.org/svn/collective/buildout/python python
+    git clone https://github.com/collective/buildout.python python
 
 Para adequarmos o buildout as nossas necessidades editaremos o arquivo 
-**buildout.cfg** existente na raiz da posta python e comentaremos as versões 
+**buildout.cfg** existente na raiz da pasta python e comentaremos as versões 
 que não serão necessárias
 ::
 
