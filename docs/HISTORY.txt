@@ -13,6 +13,8 @@ Changelog
 
 * Use Sphinx 1.0.7 [erico_andrei]
 
+* Add Babel as dependency [ericof]
+
 
 20110707.3 (2011-07-07)
 =========================
