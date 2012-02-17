@@ -24,6 +24,7 @@ setup(name='sc.dev.core',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'docutils',
           'sc.templer.core',
           'sc.templer.buildout',
           'sc.templer.policy',
@@ -41,19 +42,6 @@ setup(name='sc.dev.core',
 #          'zopeskel.dexterity==1.3',
       ],
       entry_points={
-          'console_scripts': [
-              'release = zest.releaser.release:main',
-              'prerelease = zest.releaser.prerelease:main',
-              'postrelease = zest.releaser.postrelease:main',
-              'fullrelease = zest.releaser.fullrelease:main',
-              'longtest = zest.releaser.longtest:main',
-              'lasttagdiff = zest.releaser.lasttagdiff:main',
-              'lasttaglog = zest.releaser.lasttaglog:main',
-              'sphinx-apidoc = sphinx.apidoc:main',
-              'sphinx-build = sphinx:main',
-              'sphinx-quickstart = sphinx.quickstart:main',
-              'sphinx-autogen = sphinx.ext.autosummary.generate:main',
-              ],
           'zest.releaser.releaser.after':
               'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'
           },
