@@ -24,7 +24,7 @@ setup(name='sc.dev.core',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'docutils',
+          'zc.rst2',
           'sc.templer.core',
           'sc.templer.buildout',
           'sc.templer.policy',
