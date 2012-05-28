@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '20110707.4dev'
+version = '20120528.1dev'
 
 setup(name='sc.dev.core',
       version=version,
@@ -22,27 +22,30 @@ setup(name='sc.dev.core',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
-          'zc.rst2',
-          'sc.templer.core',
-          'sc.templer.buildout',
-          'sc.templer.policy',
-          'sc.templer.theme',
-          'sc.templer.docs',
-          'setuptools-git==0.4.2',
-          'setuptools_hg==0.3',
-          'collective.dist==0.2.5',
-          'zest.releaser==3.30',
-          'Sphinx',
-          'Babel',
-          'rst2pdf==0.16',
-          'i18ndude==3.2.2',
-          'Sphinx-PyPI-upload==0.2.1',
-#          'zopeskel.dexterity==1.3',
+        'setuptools',
+        'Babel',
+        'collective.dist==0.2.5',
+        'i18ndude==3.2.2',
+        'rst2pdf==0.16',
+        'sc.templer.buildout',
+        'sc.templer.core',
+        'sc.templer.docs',
+        'sc.templer.policy',
+        'sc.templer.theme',
+        'setuptools-git==0.4.2',
+        'setuptools_hg==0.3',
+        'Sphinx',
+        'Sphinx-PyPI-upload==0.2.1',
+        'templer.core',
+        'templer.plone',
+        'templer.plonebuildout',
+        'templer.plonelocalcommands'
+        'zc.rst2',
+        'zest.releaser==3.30',
+#        'zopeskel.dexterity==1.3',
       ],
       entry_points={
           'zest.releaser.releaser.after':
-              'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'
+          'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'
           },
       )
