@@ -40,7 +40,7 @@ setup(name='sc.dev.core',
         'templer.core',
         'templer.plone',
         'templer.plonebuildout',
-        'templer.plonelocalcommands'
+        'templer.plone.localcommands',
         'zc.rst2',
         'zest.releaser==3.34',
 #        'zopeskel.dexterity==1.3',
