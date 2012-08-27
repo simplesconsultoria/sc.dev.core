@@ -11,11 +11,8 @@ source_encoding = 'utf-8'
 
 master_doc = 'index'
 
-project = u'Simples Consultoria - Desenvolvimento'
-copyright = u'2010, Simples Consultoria'
-
-version = '20100923'
-release = '20100923.01'
+project = u'sc.dev.core'
+copyright = u'2010-2012, Simples Consultoria'
 
 language = 'pt_BR'
 
@@ -35,3 +32,6 @@ latex_documents = [
   ('index', 'scdevcore.tex', u'sc.dev.core Documentation',
    u'Erico Andrei', 'manual'),
 ]
+
+from pkg_resources import get_distribution
+version = release = get_distribution(project).version
