@@ -33,6 +33,7 @@ Conteúdo
    pacotes
    releases
    boaspraticas
+   glossario
 
 ***********************
 Histórico deste pacote 
