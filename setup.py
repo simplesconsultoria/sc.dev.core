@@ -1,14 +1,16 @@
 from setuptools import setup, find_packages
+
 import os
 
 version = '20120528.1dev'
 
+long_description = (open("README.txt").read() + "\n" +
+                    open(os.path.join("docs", "HISTORY.txt")).read())
+
 setup(name='sc.dev.core',
       version=version,
       description="Developement core packages used by Simples Consultoria",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      long_description=long_description,
       classifiers=[
         "Programming Language :: Python",
         ],
