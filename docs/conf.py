@@ -29,9 +29,6 @@ html_static_path = ['_static']
 htmlhelp_basename = 'scdevcoredoc'
 
 latex_documents = [
-  ('index', 'scdevcore.tex', u'sc.dev.core Documentation',
-   u'Erico Andrei', 'manual'),
+    ('index', 'scdevcore.tex', u'sc.dev.core Documentation',
+     u'Erico Andrei', 'manual'),
 ]
-
-from pkg_resources import get_distribution
-version = release = get_distribution(project).version
