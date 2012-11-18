@@ -5,6 +5,12 @@ Changelog
 20110707.4 (unreleased)
 =========================
 
+    * Major reorganization of files and sections
+      [ericof]
+
+    * Use OSX instead of MacOS
+      [ericof]
+
     * Update documentation on Git, Mercurial, SVN, Glossary
       [ericof]
 
