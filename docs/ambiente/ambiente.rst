@@ -1,12 +1,12 @@
 Preparação do ambiente
--------------------------
+================================
 
 A Simples Consultoria trabalha primariamente com Plone, portanto as descrições
 a seguir se referem às ferramentas, e configurações, mínimas para uma estação
 de trabalho produtiva.
 
 Ferramentas Básicas
-***********************
+--------------------------------
 
 Para o trabalho diário precisamos de um ambiente propício ao desenvolvimento de
 aplicações web. Seja você desenvolvedor ou designer, usando Windows, OSX, BSD
@@ -28,10 +28,10 @@ ou Linux as ferramentas abaixo **DEVEM** estar instaladas e configuradas:
 * No Firefox e no Chrome: Firebug
 
 Sistema operacional
-***********************
+--------------------------------
 
 Windows
-^^^^^^^^^^^^^^^^^^^^^^^
+********************************
 
 * Garanta ter direitos de administrador sobre a máquina
 
@@ -40,20 +40,20 @@ Windows
 * Instale ferramentas de desenvolvimento para Windows
 
 Ferramentas Básicas
-######################
+^^^^^^^^^^^^^^^^^^^^^^^
 
 * Compilador C, C++: Mingw
 
 * Python: Python 2.4 baixado do python.org
 
 Tornando a vida fácil
-########################
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Para facilitar a vida de quem trabalha com Windows, disponibilizamos um pacote
 com os componentes básicos a partir desta url: https://simplesnet.com.br/pacotes/catalogo/windowsbuildoutgoodies/releases/1.0/buildout_windows.zip
 
 OSX
-^^^^^^^^^^^^^^^^^^^^^^^
+********************************
 
 * Editor de textos: vim, emacs, TextMate, Aptana
 
@@ -63,12 +63,12 @@ OSX
 * Suporte GNU: Rudix, Darwin Ports
 
 Linux (Ubuntu / Debian)
-^^^^^^^^^^^^^^^^^^^^^^^
+********************************
 
 * Editor de textos: vim, emacs, Gedit, Aptana
 
 Instalação de pacotes
-########################
+^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
     sudo apt-get install build-essential bzip2 gzip libbz2-dev libjpeg62-dev libncurses5-dev libpcre3-dev libreadline5-dev libssl-dev libxml2-dev libxslt1-dev lynx mercurial git-core poppler-utils python-setuptools python2.6-dev subversion vim wv zlib1g-dev
@@ -149,16 +149,16 @@ Para usar Python 2.6, execute o comando:
 Que criará uma pasta py26 com o novo ambiente.
 
 O Jeito Simples: sc.dev.core
-*******************************
+-------------------------------------
 
 Finalidade
-^^^^^^^^^^^^^^
+********************************
 
 O pacote **sc.dev.core** é um agregador de outros pacotes Python utilizados para
 o desenvolvimento de soluções Plone pela Simples Consultoria.
 
 Componentes
-^^^^^^^^^^^^^^
+********************************
 
 * sc.paster.package
 * sc.paster.buildout
@@ -172,7 +172,7 @@ Componentes
 * i18ndude
 
 Preparando a instalação
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+********************************
 
 Usualmente o primeiro passo para a instalação do sc.dev.core é a criação de um
 virtualenv próprio.
@@ -193,7 +193,7 @@ O passo seguinte é ativar este virtualenv.
 
 
 Instalando o pacote
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+********************************
 
 A instalação do **sc.dev.core** é feita com o *easy_install* do virtualenv que
 acabamos de ativar.
@@ -205,7 +205,7 @@ acabamos de ativar.
           procuraremos por uma nova versão e a instalaremos.
 
 O que ele instala
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+********************************
 
 sc.paster.package
     Implenenta modelo para criação de pacotes Python com 3 níveis (ex:sc.cliente.projeto).
