@@ -1,19 +1,18 @@
-*************************
 Configurando o ambiente
-*************************
+================================
 
 Para garantir maior produtividade e acesso a repositórios externos, existem
 algumas pequenas configurações que devem ser realizadas.
 
 Acesso via proxy
-================
+------------------
 
 Caso seu acesso internet seja feito através de um proxy é necessária a
 configuração do mesmo no sistema operacional para que o Python -- através da
 biblioteca urllib consiga acessar repositórios externos.
 
 Windows
--------
+***********
 
 * Clique com o botão direito em 'Meu Computador'
 
@@ -31,7 +30,7 @@ Windows
     * ftp_proxy (http://meuproxy:3128)
 
 OSX e Linux
----------------
+*************
 
 Na linha de comando digite:
 ::
@@ -45,7 +44,7 @@ Na linha de comando digite:
           não sejam perdidas
 
 Subversion
------------
+***********
 
 Diferente de quase todo o resto das soluções utilizas, o Subversion não leva em
 consideração as variáveis de ambiente http_proxy, https_proxy.
@@ -77,7 +76,7 @@ Configurações salvas, é só testar o acesso do Subversion com um comando, com
 Que deve realizar o checkout da versão de desenvolvimento do sc.dev.core.
 
 Repositórios de pacotes
-========================
+---------------------------
 
 A instalação do pacote **collective.dist** habilita o suporte à utilização de
 múltiplos repositórios de pacotes para interpretadores Python.
@@ -94,7 +93,7 @@ ou não acessíveis na Internet.
           do **sc.dev.core**
 
 Arquivo .pypirc
------------------
+********************
 
 O suporte aos múltiplos repositórios é configurado no arquivo **.pypirc**
 localizado na raiz da pasta do usuário.
@@ -133,7 +132,7 @@ Para outras referências sobre o **collective.dist** acesse
 http://pypi.python.org/python/collective.dist .
 
 Penduricalhos no Python
-========================
+----------------------------
 
 É possível configurar o comportamento padrão do interpretador Python em seu
 computador.
@@ -149,7 +148,7 @@ editando o arquivo **.pythonrc.py** para conter o código abaixo:
     readline.parse_and_bind('tab: complete')
 
 Configurações para Buildout
-===========================
+-----------------------------
 
 Como boa parte de nosso trabalho é realizado com buildouts, é sugerida a
 criação de configurações padrão para o seu ambiente.

@@ -1,9 +1,9 @@
-*****
 gedit
-*****
+============
 
 Introducción
-============
+----------------
+
 gedit es el editor de texto oficial del ambiente de escritorio GNOME.
 
 Aunque fue diseñado teniendo como objetivos principales la simplicidad y la
@@ -56,12 +56,13 @@ Puede descargar la versión más reciente en: http://ftp.gnome.org/pub/GNOME/bin
 
 
 Configuración
-=============
+----------------
 TBD
 
 
 Complementos (plugins)
-======================
+---------------------------
+
 .. warning::
    Todos los complementos mencionados en este texto son para la versión 2 de
    gedit.
@@ -73,8 +74,9 @@ algunos de ellos en: http://live.gnome.org/Gedit/PluginsOld
 Recomendamos, como mínimo, la instalación adicional de los paquetes de
 complementos estándar y para desarrolladores.
 
-Complementos instalados por defecto
------------------------------------
+Padrão
+^^^^^^^^^^^^
+
 Algunos de los complementos instalados en gedit por defecto son los
 siguientes:
 
@@ -95,8 +97,9 @@ siguientes:
    * Corrector ortográfico: Comprueba la ortografía del documento actual.
 
 
-Otros complementos estándar
----------------------------
+Mais usados
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 gedit cuenta, de manera adicional, con un paquete de complementos estándar que
 incluye, entre otros, los siguiente plugins:
 
@@ -114,8 +117,9 @@ incluye, entre otros, los siguiente plugins:
    * Terminal empotrado: Muestra un terminal en el panel inferior.
 
 
-Complementos para desarrollador
--------------------------------
+Plugins de desenvolvimento
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Existe un paquete con complementos para desarrolladores que incluye algunas
 funcionalidades muy útiles:
 
@@ -125,8 +129,9 @@ funcionalidades muy útiles:
      posición del cursor.
 
 
-Integración con RabbitVCS
--------------------------
+Integração com RabbitVCS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 RabbitVCS is a set of graphical tools written to provide simple and
 straightforward access to the version control systems you use. We provide
 multiple clients and extensions designed to give you a uniform experience no
@@ -134,10 +139,10 @@ matter what development tools you use.
 
 
 Instalación de los complementos
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Linux - Debian/Ubuntu
-^^^^^^^^^^^^^^^^^^^^^
+***********************
 
 Los complementos estándar se pueden instalar usando apt:
 ::
@@ -164,10 +169,10 @@ siguiente forma:
 
 
 OSX
-^^^^^
+***********************
 TBD
 
 
 Windows
-^^^^^^^
+***********************
 TBD
