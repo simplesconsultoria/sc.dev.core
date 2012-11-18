@@ -1,9 +1,8 @@
-*********************
 Mercurial (hg)
-*********************
+======================
 
 Introduções
-======================
+----------------------
 
 O Mercurial (hg) é um sistema de controle de versões, assim como CVS, Subversion
 e Git.
@@ -29,20 +28,20 @@ controle de versões dos projetos a partir de abril de 2011. Projetos antigos em
 Subversion (https://simplesnet.com.br/svn/) serão gradualmente migrados para o
 Bitbucket (https://bitbucket.org).
 
-Pacotes e projetos desenvolvidos pela Simples Consultoria para uso da 
+Pacotes e projetos desenvolvidos pela Simples Consultoria para uso da
 comunidade são mantidos no `Github <http://github.com>`_.
 
 .. warning::
     Projetos/Pacotes hospedados em repositórios do Plone ou do Zope, continuam
-    sendo mantidos com Subversion. Alguns projetos de clientes usarão Git e a 
+    sendo mantidos com Subversion. Alguns projetos de clientes usarão Git e a
     comunidade Plone está migrando seus projetos para o GitHub.
 
 
 Instalando
-======================
+----------------------
 
 Caminho fácil
---------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 O jeito fácil e rápido de começar a trabalhar com o Mercurial é através do uso
 de uma ferramenta com interface gráfica. A mais famosa delas é o TortoiseHg.
@@ -55,7 +54,7 @@ do seu sistema operacional e/ou baixe o instalador diretamente do site do
 `Mercurial <http://mercurial.selenic.com/downloads/>`_
 
 Configurações Básicas
-=======================
+----------------------
 
 Após a instalação é recomendável passar pelo processo de configuração do
 seu ambiente Mercurial.
@@ -64,7 +63,7 @@ Geralmente as configurações são armazenadas em um arquivo **.hgrc** na raiz
 de sua pasta de usuário (**Mercurial.ini** em ambientes Windows)
 
 .. warning::
-    Em sistemas operacionais como Linux e MacOS, este arquivo -- por ter seu
+    Em sistemas operacionais como Linux e OSX, este arquivo -- por ter seu
     nome iniciando com um **.** -- é oculto por padrão.
 
 Edite este arquivo com seu editor de preferência colocando, ao menos, as
@@ -79,12 +78,12 @@ Como exemplos de valores para a configuração de **editor**
     * Windows: **Notepad** ou **'C:/Program Files/Notepad++/notepad++.exe'
       -multiInst -notabbar -nosession -noPlugin**
 
-    * MacOS: **mate -w**
+    * OSX: **mate -w**
 
     * Linux: **gvim --nofork** ou **vim**
 
 Melhorando a vida no Bitbucket
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Para evitar o trabalho de toda vez ter que informar usuário e senha de acesso
 ao Bitbucket, é recomendável realizar as seguintes configurações no seu
@@ -106,14 +105,14 @@ ativada com a sua adição à seção [extensions] do arquivo de configuração:
     mercurial_keyring =
 
 .. warning::
-    Caso o mercurial_keyring não esteja instalado, você deve fazê-lo manualmente 
-    através do easy_install (usando o **mesmo** Python utilizado pelo Mercurial) 
-    ou adicionando o caminho para o arquivo do mercurial_keyring nas 
+    Caso o mercurial_keyring não esteja instalado, você deve fazê-lo manualmente
+    através do easy_install (usando o **mesmo** Python utilizado pelo Mercurial)
+    ou adicionando o caminho para o arquivo do mercurial_keyring nas
     configurações de extensions
 
 
 Outras melhorias
------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 Extensões possibilitam a adição de novas funcionalidades ao Mercurial. Elas
 estão todas listadas em http://mercurial.selenic.com/wiki/UsingExtensions e
@@ -132,7 +131,7 @@ histórico dos usos feitos na Simples Consultoria de Subversion e Git, é sábio
 deixar esta extensão configurada.
 
 Mercurial 101
-===================
+----------------------
 
 .. note::
     Em vários momentos faremos alusões ao uso do Subversion, que podem ser
@@ -150,7 +149,7 @@ repositório e que posteriormente pode ser colocado em um repositório central.
 Antes de apresentarmos os cenários, vamos listar alguns dos comandos usuais.
 
 Lista de comandos
--------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 ========== ========== ==========================================================
 Comando     Atalho     Descrição
@@ -174,7 +173,7 @@ heads                  Exibe os branches abertos em um repositório
 ========== ========== ==========================================================
 
 Cenário: Repositório Central
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Como no modelo centralizado do Subversion, vamos "baixar", inicialmente, os
 dados a partir de um repositório.
@@ -259,7 +258,7 @@ Para resumir, o ciclo é::
      hg merge
 
 Cenário: Repositório Local
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Considere uma pasta local, que você deseja colocar sob controle de versão. Como
 exemplo vamos utilizar uma pasta, de produto recém criado pelo paster, chamada
