@@ -2,7 +2,7 @@
 Padrões de desenvolvimento da Simples Consultoria
 ###################################################
 
-Este pacote -- e documentação -- são utilizados pelos desenvolvedores da 
+Este pacote -- e documentação -- são utilizados pelos desenvolvedores da
 `Simples Consultoria <http://www.simplesconsultoria.com.br>`_ em seus projetos.
 
 Para conhecer a Simples Consultoria visite:
@@ -26,9 +26,7 @@ Conteúdo
    :maxdepth: 2
 
    introducao
-   ambiente
-   editors/index
-   configuracao
+   ambiente/index
    vcs/index
    pacotes
    releases
@@ -36,11 +34,11 @@ Conteúdo
    glossario
 
 ***********************
-Histórico deste pacote 
+Histórico deste pacote
 ***********************
 .. toctree::
    :maxdepth: 2
-   
+
    HISTORY
 
 *********************
