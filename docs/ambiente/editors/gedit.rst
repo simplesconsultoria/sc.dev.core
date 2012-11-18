@@ -1,8 +1,8 @@
 gedit
-============
+---------------
 
 Introducción
-----------------
+***********************
 
 gedit es el editor de texto oficial del ambiente de escritorio GNOME.
 
@@ -39,7 +39,7 @@ avanzadas.
 
 
 Instalación
------------
+***********************
 
 Linux - Debian/Ubuntu
 ^^^^^^^^^^^^^^^^^^^^^
@@ -56,12 +56,12 @@ Puede descargar la versión más reciente en: http://ftp.gnome.org/pub/GNOME/bin
 
 
 Configuración
-----------------
+***********************
 TBD
 
 
 Complementos (plugins)
----------------------------
+***********************
 
 .. warning::
    Todos los complementos mencionados en este texto son para la versión 2 de
@@ -142,7 +142,7 @@ Instalación de los complementos
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Linux - Debian/Ubuntu
-***********************
+################################
 
 Los complementos estándar se pueden instalar usando apt:
 ::
@@ -169,10 +169,10 @@ siguiente forma:
 
 
 OSX
-***********************
+################################
 TBD
 
 
 Windows
-***********************
+################################
 TBD
