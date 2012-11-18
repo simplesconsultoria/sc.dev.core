@@ -46,7 +46,7 @@ Linux - Debian/Ubuntu
 gedit viene instalado por defecto en las distribuciones de Debian y Ubuntu con
 ambiente de escritorio GNOME.
 
-MacOS
+OSX
 ^^^^^
 Puede descargar la versión más reciente en: http://ftp.gnome.org/pub/GNOME/binaries/mac/gedit/
 
@@ -163,7 +163,7 @@ siguiente forma:
    sudo apt-get install rabbitvcs-core rabbitvcs-nautilus rabbitvcs-gedit
 
 
-MacOS
+OSX
 ^^^^^
 TBD
 
