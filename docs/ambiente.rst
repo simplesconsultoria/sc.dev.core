@@ -5,15 +5,15 @@ Ambiente de trabalho
 Preparação do ambiente
 ======================
 
-A Simples Consultoria trabalha primariamente com Plone, portanto as descrições 
-a seguir se referem às ferramentas, e configurações, mínimas para uma estação 
+A Simples Consultoria trabalha primariamente com Plone, portanto as descrições
+a seguir se referem às ferramentas, e configurações, mínimas para uma estação
 de trabalho produtiva.
 
 Ferramentas Básicas
 --------------------
 
-Para o trabalho diário precisamos de um ambiente propício ao desenvolvimento de 
-aplicações web. Seja você desenvolvedor ou designer, usando Windows, MacOS, BSD 
+Para o trabalho diário precisamos de um ambiente propício ao desenvolvimento de
+aplicações web. Seja você desenvolvedor ou designer, usando Windows, OSX, BSD
 ou Linux as ferramentas abaixo **DEVEM** estar instaladas e configuradas:
 
 * Compilador C, C++ (ver descrição de qual a melhor solução para seu OS)
@@ -26,7 +26,7 @@ ou Linux as ferramentas abaixo **DEVEM** estar instaladas e configuradas:
 
 * Editor de texto (ver descrição sobre recomendações para cada OS)
 
-* Navegadores web: Chrome, Firefox e específicos da plataforma (Internet 
+* Navegadores web: Chrome, Firefox e específicos da plataforma (Internet
   Explorer, Safari, Konqueror)
 
 * No Firefox e no Chrome: Firebug
@@ -53,15 +53,15 @@ Ferramentas Básicas
 Tornando a vida fácil
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Para facilitar a vida de quem trabalha com Windows, disponibilizamos um pacote 
+Para facilitar a vida de quem trabalha com Windows, disponibilizamos um pacote
 com os componentes básicos a partir desta url: https://simplesnet.com.br/pacotes/catalogo/windowsbuildoutgoodies/releases/1.0/buildout_windows.zip
 
-MacOS
+OSX
 *****
 
 * Editor de textos: vim, emacs, TextMate, Aptana
 
-* XCode: Necessário para compilar extensões C do Zope e de alguns pacotes 
+* XCode: Necessário para compilar extensões C do Zope e de alguns pacotes
   Python. (http://developer.apple.com/TOOLS/Xcode/)
 
 * Suporte GNU: Rudix, Darwin Ports
@@ -80,23 +80,23 @@ Instalação de pacotes
 Python
 ------
 
-Como regra geral é recomendada a instalação de interpretador Python independente 
-do usado pelo sistema operacional. 
+Como regra geral é recomendada a instalação de interpretador Python independente
+do usado pelo sistema operacional.
 
-A prática usada pela comunidade Plone é a compilação de interpretadores a partir 
-de um buildout disponível no repositório Collective. Este buildout permite que 
-vários interpretadores sejam criados e configurados conforme a necessidade do 
+A prática usada pela comunidade Plone é a compilação de interpretadores a partir
+de um buildout disponível no repositório Collective. Este buildout permite que
+vários interpretadores sejam criados e configurados conforme a necessidade do
 desenvolvedor.
 
-O primeiro passo é baixar este buildout, na raiz da pasta do usuário, 
+O primeiro passo é baixar este buildout, na raiz da pasta do usuário,
 diretamente do github.com/collective/:
 ::
-    
+
     cd ~/
     git clone https://github.com/collective/buildout.python python
 
-Para adequarmos o buildout as nossas necessidades editaremos o arquivo 
-**buildout.cfg** existente na raiz da pasta python e comentaremos as versões 
+Para adequarmos o buildout as nossas necessidades editaremos o arquivo
+**buildout.cfg** existente na raiz da pasta python e comentaremos as versões
 que não serão necessárias
 ::
 
@@ -112,15 +112,15 @@ que não serão necessárias
 
 .. note:: Neste caso apenas a versão 2.5 não será utilizada.
 
-Usando o Python instalado no sistema -- última vez que o usaremos :-) -- 
+Usando o Python instalado no sistema -- última vez que o usaremos :-) --
 executamos o buildout para compilar os interpretadores.
 ::
-    
+
     cd ~/python/
     python bootstrap.py
     ./bin/buildout
 
-Após um longo tempo -- ao menos no meu 8086 é um longo tempo -- você deve ter 
+Após um longo tempo -- ao menos no meu 8086 é um longo tempo -- você deve ter
 alguns scripts disponíveis na pasta *~/python/bin/*
 
 * buildout
@@ -131,18 +131,18 @@ alguns scripts disponíveis na pasta *~/python/bin/*
 
 * virtualenv-2.6
 
-Usaremos os scripts de virtualenv para a criação de ambientes Python apartados 
+Usaremos os scripts de virtualenv para a criação de ambientes Python apartados
 do intepretador do sistema.
 
-.. note:: O uso do virtualenv é extremamente recomendado para evitar problemas 
-          de conflitos de versão ou dependências entre pacotes Python usados por 
+.. note:: O uso do virtualenv é extremamente recomendado para evitar problemas
+          de conflitos de versão ou dependências entre pacotes Python usados por
           diferentes aplicações
 
 A criação de novos ambientes Python é simples:
 ::
-    
+
     ~/python/bin/virtual-env-2.4 py24
-    
+
 Cria um novo ambiente com Python 2.4 na pasta py24.
 
 Para usar Python 2.6, execute o comando:
@@ -158,7 +158,7 @@ O Jeito Simples: sc.dev.core
 Finalidade
 **********
 
-O pacote **sc.dev.core** é um agregador de outros pacotes Python utilizados para 
+O pacote **sc.dev.core** é um agregador de outros pacotes Python utilizados para
 o desenvolvimento de soluções Plone pela Simples Consultoria.
 
 Componentes
@@ -178,7 +178,7 @@ Componentes
 Preparando a instalação
 ***********************
 
-Usualmente o primeiro passo para a instalação do sc.dev.core é a criação de um 
+Usualmente o primeiro passo para a instalação do sc.dev.core é a criação de um
 virtualenv próprio.
 
 Um bom local seria uma pasta *simples/dev* também na raiz da pasta do usuário.
@@ -187,25 +187,25 @@ Um bom local seria uma pasta *simples/dev* também na raiz da pasta do usuário.
     mkdir -p ~/simples/
     ~/python/bin/virtualenv-2.4 --no-site-packages dev
 
-.. note:: A opção --no-site-packages evita que usemos algum pacote existente no 
+.. note:: A opção --no-site-packages evita que usemos algum pacote existente no
           site-packages do python original do virtualenv
-          
+
 O passo seguinte é ativar este virtualenv.
 ::
-    
+
     source ~/simples/dev/bin/activate
 
 
 Instalando o pacote
 ***********************
 
-A instalação do **sc.dev.core** é feita com o *easy_install* do virtualenv que 
+A instalação do **sc.dev.core** é feita com o *easy_install* do virtualenv que
 acabamos de ativar.
 ::
 
     easy_install -U sc.dev.core
 
-.. note:: A opção -U garante que mesmo que já tenhamos este pacote instalado 
+.. note:: A opção -U garante que mesmo que já tenhamos este pacote instalado
           procuraremos por uma nova versão e a instalaremos.
 
 O que ele instala
@@ -222,7 +222,7 @@ sc.paster.policy
 
 sc.paster.theme
     Implementa modelo para criação de pacotes Python de temas para portais Plone.
-    
+
 setuptools-git
     Pacote Python que facilita a integração entre setuptools e Git.
 
@@ -244,8 +244,8 @@ i18ndude
 Contas, contas e contas
 ========================
 
-Além da sua conta da Simplesnet e da sua conta de e-mail, que são criadas quando 
-da sua contratação, é necessário, para o dia a dia do seu trabalho, a criação de 
+Além da sua conta da Simplesnet e da sua conta de e-mail, que são criadas quando
+da sua contratação, é necessário, para o dia a dia do seu trabalho, a criação de
 contas em alguns serviços externos.
 
 BitBucket
@@ -265,11 +265,11 @@ PyPi
 BitBucket
 ----------
 
-Nossos repositórios estão hospedados no BitBucket sob a conta simplesconsultoria 
+Nossos repositórios estão hospedados no BitBucket sob a conta simplesconsultoria
 e para acessá-los é necessária a criação de uma conta no serviço.
 
-Crie sua conta em https://bitbucket.org/account/signup/ e requisite a alguém de 
-nossa equipe de infra a permissão para acesso aos repositórios. Não esqueça de 
+Crie sua conta em https://bitbucket.org/account/signup/ e requisite a alguém de
+nossa equipe de infra a permissão para acesso aos repositórios. Não esqueça de
 informar qual o seu username.
 
 .. _conta_github:
@@ -277,15 +277,15 @@ informar qual o seu username.
 GitHub
 ----------
 
-Com a escolha da comunidade Plone em mover seu desenvolvimento para o git e o 
+Com a escolha da comunidade Plone em mover seu desenvolvimento para o git e o
 GitHub, tornou-se necessária a criação de uma conta também neste serviço.
 
-A Simples Consultoria disponibilizará todos os seus pacotes públicos sob a 
+A Simples Consultoria disponibilizará todos os seus pacotes públicos sob a
 url de sua organização em https://github.com/organizations/simplesconsultoria e
 também sob o Collective https://github.com/organizations/collective
 
-Crie sua conta em https://github.com/signup/free e requisite a alguém de 
-nossa equipe de infra para ser cadastrado em nossa `organização 
+Crie sua conta em https://github.com/signup/free e requisite a alguém de
+nossa equipe de infra para ser cadastrado em nossa `organização
 <https://github.com/organizations/simplesconsultoria>`_
 
 .. _conta_ploneorg:
@@ -293,20 +293,20 @@ nossa equipe de infra para ser cadastrado em nossa `organização
 Plone.org
 ----------
 
-Crie uma conta no site Plone.org em http://plone.org/@@register. Esta conta 
-permite acesso ao site, criação de conteúdo em algumas áreas do site e, o mais 
-importante, a possibilidade de criar tickets e reportar problemas para os 
+Crie uma conta no site Plone.org em http://plone.org/@@register. Esta conta
+permite acesso ao site, criação de conteúdo em algumas áreas do site e, o mais
+importante, a possibilidade de criar tickets e reportar problemas para os
 mantenedores do Plone.
 
-Para ver os tickets abertos acesse https://dev.plone.org/plone/report. Este 
-endereço requer usuário e senha ativos no Plone.org. 
+Para ver os tickets abertos acesse https://dev.plone.org/plone/report. Este
+endereço requer usuário e senha ativos no Plone.org.
 
-Para criar um novo ticket a url é https://dev.plone.org/plone/newticket. Preste 
-muita atenção na caixa que lista o componente ao qual o ticket se refere pois 
+Para criar um novo ticket a url é https://dev.plone.org/plone/newticket. Preste
+muita atenção na caixa que lista o componente ao qual o ticket se refere pois
 esta seleção é essencial ao rápido endereçamento de sua requisição.
 
-Aqui na Simples Consultoria nos sentimos na responsabilidade de não só apontar 
-os problemas mas também resolvê-los. Para tanto precisamos de acesso aos 
+Aqui na Simples Consultoria nos sentimos na responsabilidade de não só apontar
+os problemas mas também resolvê-los. Para tanto precisamos de acesso aos
 respositórios de código do Plone, que estão divididos da seguinte maneira:
 
 Plone (https://svn.plone.org/svn/plone)
@@ -318,17 +318,17 @@ Archetypes (https://svn.plone.org/svn/archetypes)
 Collective (https://svn.plone.org/svn/collective)
     Componentes de terceiros. Local onde boa parte dos add-ons do Plone é mantido. (Atualmente em fase de migração para o GitHub)
 
-O acesso ao primeiro repositório é restrito ao preenchimento de um documento, 
+O acesso ao primeiro repositório é restrito ao preenchimento de um documento,
 o `Contributors Agreement <http://plone.org/foundation/contributors-agreement/agreement.pdf/view>`_,
-e a um processo de aprovação. 
+e a um processo de aprovação.
 
 Os dois repositórios seguintes Archetypes e Collective são de uso frequente por
-nossa equipe, portanto você possuir acesso de commit a eles. O acesso é 
-concedido após a criação de `um ticket <https://dev.plone.org/plone.org/newticket>`_ 
-e a sua categorização como **commitaccess**. 
+nossa equipe, portanto você possuir acesso de commit a eles. O acesso é
+concedido após a criação de `um ticket <https://dev.plone.org/plone.org/newticket>`_
+e a sua categorização como **commitaccess**.
 
-Informe neste ticket que você deseja acesso ao Collective e que você trabalha na 
-Simples Consultoria e que ajudará na manutenção de produtos existentes neste 
+Informe neste ticket que você deseja acesso ao Collective e que você trabalha na
+Simples Consultoria e que ajudará na manutenção de produtos existentes neste
 repositório.
 
 .. _conta_pypi:
@@ -336,19 +336,19 @@ repositório.
 PyPi
 --------
 
-O PyPi (Python Package Index) é o repositório central de pacotes da linguagem 
-Python. Apesar de ser um esforço relativamente recente ele é o local onde as 
+O PyPi (Python Package Index) é o repositório central de pacotes da linguagem
+Python. Apesar de ser um esforço relativamente recente ele é o local onde as
 comunidades de produtos desenvolvidos com Python contribuem seus códigos.
 
-A criação de uma conta no PyPi é relativamente simples. Acesse a url de cadastro 
-em http://pypi.python.org/pypi?:action=register_form , preencha o formulário e 
-confirme seu registro ao visitar o link enviado por email. 
+A criação de uma conta no PyPi é relativamente simples. Acesse a url de cadastro
+em http://pypi.python.org/pypi?:action=register_form , preencha o formulário e
+confirme seu registro ao visitar o link enviado por email.
 
-Após a criação de sua conta, converse com nossa equipe de infra-estrutura para 
-que seu usuário ganhe permissão de acesso (e administração) dos pacotes 
+Após a criação de sua conta, converse com nossa equipe de infra-estrutura para
+que seu usuário ganhe permissão de acesso (e administração) dos pacotes
 disponibilizados pela Simples Consultoria.
 
-.. note::No PyPi é possível utilizar seu OpenId como forma de autenticação, mas 
-         não temos nenhuma experiência do OpenId no processo automatizado de 
+.. note::No PyPi é possível utilizar seu OpenId como forma de autenticação, mas
+         não temos nenhuma experiência do OpenId no processo automatizado de
          release de pacotes.
 
