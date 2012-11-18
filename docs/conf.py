@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # Sphinx configuration
 # For more information see http://sphinx.pocoo.org/config.html
+from datetime import datetime
+from pkg_resources import get_distribution
+
+now = datetime.now()
 
 extensions = []
 
@@ -12,7 +16,8 @@ source_encoding = 'utf-8'
 master_doc = 'index'
 
 project = u'sc.dev.core'
-copyright = u'2010-2012, Simples Consultoria'
+copyright = u'2010-%d, Simples Consultoria' % now.year
+version = release = get_distribution(project).version
 
 language = 'pt_BR'
 
