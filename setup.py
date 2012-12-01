@@ -51,9 +51,9 @@ setup(name='sc.dev.core',
           'zest.pocompile',
           'zest.releaser==3.34',
           #'zopeskel.dexterity==1.3'
-      ],
-      entry_points={
-          'zest.releaser.releaser.after':
-          'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'
-      },
-      )
+      ]
+      #entry_points={
+      #    'zest.releaser.releaser.after':
+      #    'sphinx_pypi=sc.dev.core.sphinx_pypi:upload'
+      #},
+)
